@@ -1,0 +1,129 @@
+
+0gui.MainGUI#getLblNewLabel()Ljavax/swing/JLabel;A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaé é("3*Ù
+2A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaê# ê(1Â
+‚
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaê# ê(H
+%1java.util.ResourceBundle"Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;*"
+java.util.ResourceBundle*
+	Etiquetas˚¯
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaê# ê(b
+%2java.lang.String"Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;* 
+
+%1java.util.ResourceBundle*
+SelectOption2getString(Ljava/lang/String;)sq
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaê ê("
+%3javax.swing.JLabel"javax.swing.JLabel≤
+Ø
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaê ê(c
+%4".javax.swing.JLabel#<init>(Ljava/lang/String;)V*
+
+%3javax.swing.JLabel*
+
+%2java.lang.Stringè
+å
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaê ê(c%
+gui.MainGUI"
+jLabelSelectOption"__id*
+
+%3javax.swing.JLabelè
+å
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaë ë(
+%5javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption^
+\
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaë1 ë(:	
+%6int"__id*
+""ig
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaë" ë(&
+%7java.awt.Font"java.awt.FontØ
+¨
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaë ë(?
+%8"+java.awt.Font#<init>(Ljava/lang/String;II)V*
+
+%7java.awt.Font*
+
+Tahoma*
+	
+%6int*2—Œ
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaë ë(@
+
+%9void"0javax.swing.JComponent#setFont(Ljava/awt/Font;)V*
+
+%5javax.swing.JLabel*
+
+%7java.awt.Font2setFont(Ljava/awt/Font;)ê
+ç
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaí í(
+%10javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOptionj
+h
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaí$ í(/
+%11java.awt.Color"__id*
+""„‡
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaí í(0
+%12void"7javax.swing.JComponent#setForeground(Ljava/awt/Color;)V*
+
+%10javax.swing.JLabel*
+
+%11java.awt.Color2setForeground(Ljava/awt/Color;)ê
+ç
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaì ì(
+%13javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption_
+]
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaì- ì(B
+
+%14int"__id*
+""»≈
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaì ì(C
+%15void"-javax.swing.JLabel#setHorizontalAlignment(I)V*
+
+%13javax.swing.JLabel*
+
+
+%14int2setHorizontalAlignment(I)*
+1*‡
+3A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaè è(è
+å
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaè è(
+%0javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption*
+2
+1*ª
+1A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaï	 ï(ê
+ç
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaï	 ï(
+%16javax.swing.JLabel"__id*'*%
+gui.MainGUI"
+jLabelSelectOption"`
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaï ï(
+
+%16javax.swing.JLabelB
+gui.MainGUI

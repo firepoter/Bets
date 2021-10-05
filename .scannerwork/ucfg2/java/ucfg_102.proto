@@ -1,16 +1,17 @@
 
-@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaí í(#"1*ˆ
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaì	 ì(™
-ß
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaì	 ì(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicNode"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaì ì(
-
-%0java.lang.StringB
-configuration.ConfigXML
+/domain.Bezeroa#getJokatuak()Ljava/lang/Integer;D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaé é("1*π
+1D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaè	 è(ä
+á
+D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaè	 è(
+%0java.lang.Integer"__id* *
+domain.Bezeroa"
+
+jokatuak"a
+D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaè è(
+
+%0java.lang.IntegerB
+domain.Bezeroa

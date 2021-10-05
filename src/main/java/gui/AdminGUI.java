@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 
 public class AdminGUI extends JFrame {
-
+	public final String etiqueta = "Etiquetas";
 	/**
 	 * 
 	 */
@@ -38,7 +38,7 @@ public class AdminGUI extends JFrame {
 	}
 
 	public void AdminGUIExekuzioa() throws Exception{
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("Admin")); //$NON-NLS-1$ //$NON-NLS-2$
+		this.setTitle(ResourceBundle.getBundle(etiqueta).getString("Admin")); //$NON-NLS-1$ //$NON-NLS-2$
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 332);
@@ -47,11 +47,11 @@ public class AdminGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Welcome")+" "+admin.getErabiltzaileIzena()+"!"); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle(etiqueta).getString("Welcome")+" "+admin.getErabiltzaileIzena()+"!"); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel.setBounds(124, 23, 250, 29);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("SignOut"));
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(etiqueta).getString("SignOut"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				saioaItxi();
@@ -67,7 +67,7 @@ public class AdminGUI extends JFrame {
 				done.setText("");
 			}
 		});
-		btnCreateQuestion.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateQuestion")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnCreateQuestion.setText(ResourceBundle.getBundle(etiqueta).getString("CreateQuestion")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnCreateQuestion.setBounds(10, 50, 408, 66);
 		contentPane.add(btnCreateQuestion);
 		
@@ -76,10 +76,10 @@ public class AdminGUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				BLFacade facade=MainGUI.getBusinessLogic();
 				facade.eguneratuErrepikapenak();
-				done.setText(ResourceBundle.getBundle("Etiquetas").getString("Done"));
+				done.setText(ResourceBundle.getBundle(etiqueta).getString("Done"));
 			}
 		});
-		eguneratuHilabetekoak.setText(ResourceBundle.getBundle("Etiquetas").getString("ResetMonth")); //$NON-NLS-1$ //$NON-NLS-2$
+		eguneratuHilabetekoak.setText(ResourceBundle.getBundle(etiqueta).getString("ResetMonth")); //$NON-NLS-1$ //$NON-NLS-2$
 		eguneratuHilabetekoak.setBounds(10, 180, 408, 66);
 		contentPane.add(eguneratuHilabetekoak);
 		
@@ -89,7 +89,7 @@ public class AdminGUI extends JFrame {
 				irekiPuntuazioakIkusi();
 			}
 		});
-		puntuazioakIkusi.setText(ResourceBundle.getBundle("Etiquetas").getString("ViewWorker")); //$NON-NLS-1$ //$NON-NLS-2$
+		puntuazioakIkusi.setText(ResourceBundle.getBundle(etiqueta).getString("ViewWorker")); //$NON-NLS-1$ //$NON-NLS-2$
 		puntuazioakIkusi.setBounds(10, 115, 408, 66);
 		contentPane.add(puntuazioakIkusi);
 		

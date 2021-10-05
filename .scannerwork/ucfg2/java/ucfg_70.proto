@@ -1,15 +1,30 @@
 
-domain.Event#hashCode()IF
-</Users/iturrioz/git/Bets2021/src/main/java/domain/Event.javaq q("1*­
+/domain.Pronostikoa#toString()Ljava/lang/String;F
+<D:/GitHub/Bets21Azkena/src/main/java/domain/Pronostikoa.java` `("1*é
 1F
-</Users/iturrioz/git/Bets2021/src/main/java/domain/Event.javar r(
-Š
+<D:/GitHub/Bets21Azkena/src/main/java/domain/Pronostikoa.javaa	 a(’
+
 F
-</Users/iturrioz/git/Bets2021/src/main/java/domain/Event.javat t('
-%0java.lang.Integer"__id*!*
-domain.Event"
-eventNumber"P
+<D:/GitHub/Bets21Azkena/src/main/java/domain/Pronostikoa.javaa	 a(
+%0java.lang.String"__id*'*%
+domain.Pronostikoa"
+deskripzioa
+
 F
-</Users/iturrioz/git/Bets2021/src/main/java/domain/Event.javau u(
-""B
-domain.Event
+<D:/GitHub/Bets21Azkena/src/main/java/domain/Pronostikoa.javaa	 a(
+%1java.lang.String"__concat*
+
+%0java.lang.String*
+ : 
+Œ
+F
+<D:/GitHub/Bets21Azkena/src/main/java/domain/Pronostikoa.javaa	 a($
+%2java.lang.String"__concat*
+
+%1java.lang.String*
+"""b
+F
+<D:/GitHub/Bets21Azkena/src/main/java/domain/Pronostikoa.javaa a(%
+
+%2java.lang.StringB
+domain.Pronostikoa

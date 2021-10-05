@@ -35,12 +35,13 @@ import exceptions.UserAlreadyExist;
 @WebService(endpointInterface = "businessLogic.BLFacade")
 public class BLFacadeImplementation  implements BLFacade {
 	DataAccess dbManager;
+	public final String init = "initialize";
 
 	public BLFacadeImplementation()  {		
 		System.out.println("Creating BLFacadeImplementation instance");
 		ConfigXML c=ConfigXML.getInstance();
-		dbManager=new DataAccess(c.getDataBaseOpenMode().equals("initialize"));
-		if (c.getDataBaseOpenMode().equals("initialize")) {
+		dbManager=new DataAccess(c.getDataBaseOpenMode().equals(init));
+		if (c.getDataBaseOpenMode().equals(init)) {
 			dbManager.initializeDB();
 			dbManager.close();
 		}
@@ -51,7 +52,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
 		ConfigXML c=ConfigXML.getInstance();
 		
-		if (c.getDataBaseOpenMode().equals("initialize")) {
+		if (c.getDataBaseOpenMode().equals(init)) {
 			da.open(true);
 			da.initializeDB();
 			da.close();
@@ -72,7 +73,7 @@ public class BLFacadeImplementation  implements BLFacade {
  	 * @throws QuestionAlreadyExist if the same question already exists for the event
 	 */
    @WebMethod
-   public Question createQuestion(Event event, String question,  double betMinimum) throws EventFinished, QuestionAlreadyExist{
+   public Question createQuestion(Event event, String question,  float betMinimum) throws EventFinished, QuestionAlreadyExist{
 	   
 	    //The minimum bed must be greater than 0
 		dbManager.open(false);

@@ -1,0 +1,93 @@
+
+,gui.MainGUI#getBoton3()Ljavax/swing/JButton;?
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.java~ ~("3*‡
+2A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ Ä(&us
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ Ä($
+%1javax.swing.JButton"javax.swing.JButtonà
+Ö
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ Ä(&
+%2"javax.swing.JButton#<init>()V*
+
+%1javax.swing.JButtonë
+é
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÄ Ä(&&
+gui.MainGUI"
+jButtonQueryQueries"__id*
+
+%1javax.swing.JButtonë
+é
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÅ Å(
+%3javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueriesÂ
+‚
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÅ Å(D
+%4java.util.ResourceBundle"Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;*"
+java.util.ResourceBundle*
+	Etiquetas˚¯
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÅ Å(^
+%5java.lang.String"Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;* 
+
+%4java.util.ResourceBundle*
+QueryQueries2getString(Ljava/lang/String;)ﬂ‹
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÅ Å(_
+
+%6void"7javax.swing.AbstractButton#setText(Ljava/lang/String;)V*
+
+%3javax.swing.JButton*
+
+%5java.lang.String2setText(Ljava/lang/String;)ë
+é
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÇ Ç(
+%7javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueriessq
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÇ- Ç(J
+%8Lgui/MainGUI$3335;"Lgui/MainGUI$3335;Ñ
+Å
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÇ) à(
+%9"java.lang.Object#<init>()V*
+
+%8Lgui/MainGUI$3335;êç
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaÇ à(
+%10void"Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V*
+
+%7javax.swing.JButton*
+
+%8Lgui/MainGUI$3335;22addActionListener(Ljava/awt/event/ActionListener;)*
+1*ﬁ
+3?
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.java (è
+å
+?
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.java (
+%0javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueries*
+2
+1*æ
+1A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaä	 ä(í
+è
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaä	 ä(
+%11javax.swing.JButton"__id*(*&
+gui.MainGUI"
+jButtonQueryQueries"a
+A
+5D:/GitHub/Bets21Azkena/src/main/java/gui/MainGUI.javaä ä(
+
+%11javax.swing.JButtonB
+gui.MainGUI

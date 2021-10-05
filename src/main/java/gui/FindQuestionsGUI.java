@@ -16,13 +16,14 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class FindQuestionsGUI extends JFrame {
+	public final String etiqueta = "Etiquetas";
 	private static final long serialVersionUID = 1L;
 
-	private final JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
-	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Queries")); 
-	private final JLabel jLabelEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Events")); 
+	private final JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle(etiqueta).getString("EventDate"));
+	private final JLabel jLabelQueries = new JLabel(ResourceBundle.getBundle(etiqueta).getString("Queries")); 
+	private final JLabel jLabelEvents = new JLabel(ResourceBundle.getBundle(etiqueta).getString("Events")); 
 
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private JButton jButtonClose = new JButton(ResourceBundle.getBundle(etiqueta).getString("Close"));
 
 	// Code for JCalendar
 	private JCalendar jCalendar1 = new JCalendar();
@@ -41,13 +42,13 @@ public class FindQuestionsGUI extends JFrame {
 
 	
 	private String[] columnNamesEvents = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("EventN"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Event"), 
+			ResourceBundle.getBundle(etiqueta).getString("EventN"), 
+			ResourceBundle.getBundle(etiqueta).getString("Event"), 
 
 	};
 	private String[] columnNamesQueries = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("QueryN"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Query")
+			ResourceBundle.getBundle(etiqueta).getString("QueryN"), 
+			ResourceBundle.getBundle(etiqueta).getString("Query")
 
 	};
 
@@ -69,7 +70,7 @@ public class FindQuestionsGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
+		this.setTitle(ResourceBundle.getBundle(etiqueta).getString("QueryQueries"));
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
 		jLabelQueries.setBounds(138, 248, 406, 14);
@@ -150,8 +151,8 @@ public class FindQuestionsGUI extends JFrame {
 
 						Vector<domain.Event> events=facade.getEvents(firstDay);
 
-						if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
-						else jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
+						if (events.isEmpty() ) jLabelEvents.setText(ResourceBundle.getBundle(etiqueta).getString("NoEvents")+ ": "+dateformat1.format(calendarAct.getTime()));
+						else jLabelEvents.setText(ResourceBundle.getBundle(etiqueta).getString("Events")+ ": "+dateformat1.format(calendarAct.getTime()));
 						for (domain.Event ev:events){
 							Vector<Object> row = new Vector<Object>();
 
@@ -189,9 +190,9 @@ public class FindQuestionsGUI extends JFrame {
 				tableModelQueries.setDataVector(null, columnNamesQueries);
 
 				if (queries.isEmpty())
-					jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("NoQueries")+": "+ev.getDescription());
+					jLabelQueries.setText(ResourceBundle.getBundle(etiqueta).getString("NoQueries")+": "+ev.getDescription());
 				else 
-					jLabelQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectedEvent")+" "+ev.getDescription());
+					jLabelQueries.setText(ResourceBundle.getBundle(etiqueta).getString("SelectedEvent")+" "+ev.getDescription());
 
 				for (domain.Question q:queries){
 					Vector<Object> row = new Vector<Object>();

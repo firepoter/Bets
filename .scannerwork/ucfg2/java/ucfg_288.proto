@@ -1,0 +1,92 @@
+
+(domain.Event#equals(Ljava/lang/Object;)Z@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.javaz z("startingBlock*•
+2B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.javaƒ
+ ƒ("L
+B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.javaƒ ƒ(
+""*î
+3B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java (~
+|
+B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java (
+otherdomain.Event"__id*
+
+objjava.lang.Object‰
+†
+B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java‚ ‚(
+%2java.lang.Integer"__id*!*
+domain.Event"
+eventNumber
+
+B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java‚ ‚(&
+%3java.lang.Integer"__id*(*&
+
+otherdomain.Event"
+eventNumber*
+2
+1*Ş
+startingBlock@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.javaz z("Š
+‡
+@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.javay y(
+
+%4"
+__annotate*
+java.lang.Override*
+
+objjava.lang.Objects
+q
+@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.javaz z(!
+objjava.lang.Object"__annotation*
+
+%4*	
+5
+6
+8*•
+4B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java€
+ €("L
+B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java€ €(
+""*¬
+5@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java (¨¥
+@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java (
+%0java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+domain.Event2
+getClass()±®
+@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java ("
+%1java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*
+
+objjava.lang.Object2
+getClass()*
+3
+4*‘
+6@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java~
+ ~("J
+@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java~ ~(
+""*‘
+8@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java|
+ |("J
+@
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java| |(
+""*•
+1B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java„	 „("L
+B
+6D:/GitHub/Bets21Azkena/src/main/java/domain/Event.java„ „(
+"":
+objjava.lang.ObjectB
+domain.Event

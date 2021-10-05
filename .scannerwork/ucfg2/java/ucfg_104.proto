@@ -1,16 +1,16 @@
 
-@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaš š(#"1*ö
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java›	 ›(ª
-§
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java›	 ›(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicName"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java› ›(
-
-%0java.lang.StringB
-configuration.ConfigXML
+0domain.Bezeroa#getIrabaziak()Ljava/lang/Integer;D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.java– –("1*º
+1D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.java—	 —(‹
+ˆ
+D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.java—	 —(
+%0java.lang.Integer"__id*!*
+domain.Bezeroa"
+	irabaziak"a
+D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.java— —(
+
+%0java.lang.IntegerB
+domain.Bezeroa

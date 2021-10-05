@@ -75,6 +75,9 @@ public class ConfigXML {
 		
 		  try {
 			  DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			  String feature = null;
+			  feature = "http://apache.org/xml/features/disallow-doctype-decl";
+			  dbFactory.setFeature(feature, true);
 			  DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			  Document doc = dBuilder.parse(new File(configFile));
 			  doc.getDocumentElement().normalize();

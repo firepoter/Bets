@@ -1,16 +1,20 @@
 
-;configuration.ConfigXML#getDatabaseNode()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java¦ ¦("1*ñ
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java§	 §(¥
-¢
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java§	 §(
-%0java.lang.String"__id*-*+
-configuration.ConfigXML"
-databaseNode"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java§ §(
-
-%0java.lang.StringB
-configuration.ConfigXML
++domain.Bezeroa#baduMezua(Ldomain/Bezeroa;)ZD
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.java¼ ¼("3"8"1*™
+3D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaÆ Æ("N
+D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaÆ Æ(
+""*™
+8D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaÀ À("N
+D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaÀ À(
+""*™
+1D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaÉ	 É("N
+D
+8D:/GitHub/Bets21Azkena/src/main/java/domain/Bezeroa.javaÉ É(
+"":
+besteadomain.BezeroaB
+domain.Bezeroa

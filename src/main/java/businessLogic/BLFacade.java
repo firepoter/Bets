@@ -8,7 +8,6 @@ import java.util.Date;
 
 
 
-//import domain.Booking;
 import domain.Question;
 import domain.Apustua;
 import domain.ArretaElkarrizketa;
@@ -48,7 +47,7 @@ public interface BLFacade  {
 	 * @throws EventFinished if current data is after data of the event
  	 * @throws QuestionAlreadyExist if the same question already exists for the event
 	 */
-	@WebMethod Question createQuestion(Event event, String question, double betMinimum) throws EventFinished, QuestionAlreadyExist;
+	@WebMethod Question createQuestion(Event event, String question, float betMinimum) throws EventFinished, QuestionAlreadyExist;
 	
 	
 	/**
@@ -121,9 +120,9 @@ public interface BLFacade  {
 	
 	@WebMethod public void ezabatuGertaera(Event event);
 	
-	@WebMethod public Bezeroa getBezeroa(String ErabiltzaileIzena);
+	@WebMethod public Bezeroa getBezeroa(String erabiltzaileIzena);
 	
-	@WebMethod public Langilea getLangilea(String ErabiltzaileIzena);
+	@WebMethod public Langilea getLangilea(String erabiltzaileIzena);
 	
 	@WebMethod public Vector<Bezeroa> getBezeroak(String username, Bezeroa bezeroa);
 	
