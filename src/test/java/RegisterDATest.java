@@ -48,11 +48,10 @@ class RegisterDATest {
 			Date dat;
 			dat = sdf.parse("19/03/1990");
 			String exIzena = "Juan";
-			String exAbizena = "Carlos";
 			
 			berria = sut.register("Juan", "Carlos", "Calvo", "juana123", "123456", "656532320", "juana123@gmail.com", dat, "admin");
 			assertEquals(berria.getIzena(), exIzena);
-			assertEquals(berria.getAbizena1(), exAbizena);
+			assertEquals(berria.getClass().getName(), "domain.Admin");
 		}catch(ParseException e) {
 			fail("it should be good");
 		}
@@ -66,11 +65,10 @@ class RegisterDATest {
 			Date dat;
 			dat = sdf.parse("10/07/1999");
 			String exIzena = "Jose";
-			String exAbizena = "Garcia";
 			
 			berria = sut.register("Jose", "Garcia", "Perez", "JoseRamon", "aaaaaaaa", "123456789", "JoseRamon@gmail.com", dat, "langilea");
 			assertEquals(berria.getIzena(), exIzena);
-			assertEquals(berria.getAbizena1(), exAbizena);
+			assertEquals(berria.getClass().getName(), "domain.Langilea");
 		}catch(ParseException e) {
 			fail("it should be good");
 		}
@@ -84,11 +82,10 @@ class RegisterDATest {
 			Date dat;
 			dat = sdf.parse("20/11/2000");
 			String exIzena = "Saioa";
-			String exAbizena = "Goikoetxea";
 			
 			berria = sut.register("Saioa", "Goikoetxea", "Ugarte", "Saioo99", "b", "123456789", "Saioo99@gmail.com", dat, "bezeroa");
 			assertEquals(berria.getIzena(), exIzena);
-			assertEquals(berria.getAbizena1(), exAbizena);
+			assertEquals(berria.getClass().getName(), "domain.Bezeroa");
 		}catch(ParseException e) {
 			fail("it should be good");
 		}

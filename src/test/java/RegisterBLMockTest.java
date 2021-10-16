@@ -27,7 +27,7 @@ class RegisterBLMockTest {
 	BLFacade sut = new BLFacadeImplementation(dataAccess);
 
 	@Test
-	@DisplayName("Test 4:...")
+	@DisplayName("Test 4:....")
 	void test4() throws UserAlreadyExist {
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
