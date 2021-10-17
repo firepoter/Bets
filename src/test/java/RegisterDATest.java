@@ -64,9 +64,9 @@ class RegisterDATest {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			Date dat;
 			dat = sdf.parse("10/07/1999");
-			String exIzena = "Jose";
+			String exIzena = "Pablo";
 			
-			berria = sut.register("Jose", "Garcia", "Perez", "JoseRamon", "aaaaaaaa", "123456789", "JoseRamon@gmail.com", dat, "langilea");
+			berria = sut.register("Pablo", "Iglesia", "Calvo", "Rem", "aaaaaaaa", "123456789", "Rem@gmail.com", dat, "langilea");
 			assertEquals(berria.getIzena(), exIzena);
 			assertEquals(berria.getClass().getName(), "domain.Langilea");
 		}catch(ParseException e) {
@@ -81,9 +81,9 @@ class RegisterDATest {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			Date dat;
 			dat = sdf.parse("20/11/2000");
-			String exIzena = "Saioa";
+			String exIzena = "Horo";
 			
-			berria = sut.register("Saioa", "Goikoetxea", "Ugarte", "Saioo99", "b", "123456789", "Saioo99@gmail.com", dat, "bezeroa");
+			berria = sut.register("Horo", "Laurence", "Lafurenche", "Horo66", "b", "123456789", "Horo66@gmail.com", dat, "bezeroa");
 			assertEquals(berria.getIzena(), exIzena);
 			assertEquals(berria.getClass().getName(), "domain.Bezeroa");
 		}catch(ParseException e) {
@@ -99,7 +99,7 @@ class RegisterDATest {
 			Date dat;
 			dat = sdf.parse("20/11/2000");
 			
-			assertThrows(IllegalArgumentException.class, ()-> sut.register("Saioa", "Goikoetxea", "Ugarte", "Saioo99", "b", "123456789", "Saioo99@gmail.com", dat, "ikaslea"));
+			assertThrows(IllegalArgumentException.class, ()-> sut.register("Mihail", "Constanting", "Ugarte", "Mihail", "b", "123456789", "Mihail@gmail.com", dat, "ikaslea"));
 		}catch(ParseException e) {
 			fail("it should be good");
 		}
