@@ -1,18 +1,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>Bets21</groupId>
-  <artifactId>Bets21</artifactId>
+  <artifactId>betsVeriCont</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
 <build>
     <plugins>
 	<plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
-          <configuration>
-               <testFailureIgnore>true</testFailureIgnore>
-            </configuration>
+          <groupId>org.jacoco</groupId> 
+    <artifactId>jacoco-maven-plugin</artifactId> 
+    <version>0.8.6</version> 
+    <executions> 
+        <execution> 
+          <id>prepare-agent</id> 
+          <goals> 
+            <goal>prepare-agent</goal> 
+          </goals> 
+        </execution> 
+        <execution> 
+          <id>report</id> 
+          <goals> 
+            <goal>report</goal> 
+          </goals> 
+        </execution> 
+     </executions> 
         </plugin>
    </plugins>
 </build>
@@ -24,11 +35,12 @@
 	</repository>
 </repositories>
 
-<properties>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
-  	<sonar.organization>firepoter</sonar.organization>
-  	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+<properties> 
+    <maven.compiler.target>11</maven.compiler.target> 
+    <maven.compiler.source>11</maven.compiler.source> 
+    <sonar.organization>firepoter</sonar.organization> 
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>   
+    <sonar.login>15d6d09b7e397ee41f054bfce1e651e1bbde8f24</sonar.login>  
 </properties>
 
 <!-- https://mvnrepository.com/artifact/junit/junit -->
