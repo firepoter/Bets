@@ -14,6 +14,7 @@ import domain.Bezeroa;
 
 public class BezeroaGUI extends JFrame {
 
+	private static final String ETIQUETAS = "Etiquetas";
 	/**
 	* 
 	*/
@@ -34,7 +35,7 @@ public class BezeroaGUI extends JFrame {
 
 	public void bezeroaGUIExekuzioa() throws Exception {
 		
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("Customer"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("Customer"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 500);
 		contentPane = new JPanel();
@@ -42,11 +43,11 @@ public class BezeroaGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Welcome")+" "+bezeroa.getErabiltzaileIzena()+"!"); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Welcome")+" "+bezeroa.getErabiltzaileIzena()+"!"); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel.setBounds(123, 0, 250, 29);
 		contentPane.add(lblNewLabel);
 
-		JButton SignOut = new JButton(ResourceBundle.getBundle("Etiquetas").getString("SignOut")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton SignOut = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("SignOut")); //$NON-NLS-1$ //$NON-NLS-2$
 		SignOut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				saioaItxi();
@@ -61,7 +62,7 @@ public class BezeroaGUI extends JFrame {
 				irekiApustuaEgin();
 			}
 		});
-		btnMakeABet.setText(ResourceBundle.getBundle("Etiquetas").getString("btnMakeABet")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnMakeABet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("btnMakeABet")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnMakeABet.setBounds(16, 25, 408, 40);
 		contentPane.add(btnMakeABet);
 		
@@ -71,7 +72,7 @@ public class BezeroaGUI extends JFrame {
 				irekiApostuaEzabatu();
 			}
 		});
-		btnDeleteABet.setText(ResourceBundle.getBundle("Etiquetas").getString("btnDeleteABet")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnDeleteABet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("btnDeleteABet")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnDeleteABet.setBounds(16, 64, 408, 40);
 		contentPane.add(btnDeleteABet);
 		
@@ -81,7 +82,7 @@ public class BezeroaGUI extends JFrame {
 				irekiDiruaSartu();
 			}
 		});
-		btnDirua.setText(ResourceBundle.getBundle("Etiquetas").getString("btnDirua")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnDirua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("btnDirua")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnDirua.setBounds(16, 103, 408, 40);
 		contentPane.add(btnDirua);
 		
@@ -91,7 +92,7 @@ public class BezeroaGUI extends JFrame {
 				irekiMugimenduakIkusi();
 			}
 		});
-		btnDiruMugimenduakIkusi.setText(ResourceBundle.getBundle("Etiquetas").getString("btnDiruMugimenduakIkusi")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnDiruMugimenduakIkusi.setText(ResourceBundle.getBundle(ETIQUETAS).getString("btnDiruMugimenduakIkusi")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnDiruMugimenduakIkusi.setBounds(16, 142, 408, 40);
 		contentPane.add(btnDiruMugimenduakIkusi);
 		
@@ -102,7 +103,7 @@ public class BezeroaGUI extends JFrame {
 				a.setVisible(true);
 			}
 		});
-		btnQueryQuestions.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnQueryQuestions.setText(ResourceBundle.getBundle(ETIQUETAS).getString("QueryQueries")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnQueryQuestions.setBounds(16, 181, 408, 40);
 		contentPane.add(btnQueryQuestions);
 		
@@ -112,7 +113,7 @@ public class BezeroaGUI extends JFrame {
 				irekiErrepikatzekoEskaeraEgin();
 			}
 		});
-		requestRepeat.setText(ResourceBundle.getBundle("Etiquetas").getString("RequestToRepeat")); //$NON-NLS-1$ //$NON-NLS-2$
+		requestRepeat.setText(ResourceBundle.getBundle(ETIQUETAS).getString("RequestToRepeat")); //$NON-NLS-1$ //$NON-NLS-2$
 		requestRepeat.setBounds(16, 220, 408, 40);
 		contentPane.add(requestRepeat);
 		
@@ -122,7 +123,7 @@ public class BezeroaGUI extends JFrame {
 				irekiPostontzia();
 			}
 		});
-		postontzia.setText(ResourceBundle.getBundle("Etiquetas").getString("Mailbox")); //$NON-NLS-1$ //$NON-NLS-2$
+		postontzia.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Mailbox")); //$NON-NLS-1$ //$NON-NLS-2$
 		postontzia.setBounds(16, 298, 408, 40);
 		contentPane.add(postontzia);
 		
@@ -132,7 +133,7 @@ public class BezeroaGUI extends JFrame {
 				irekiEzarpenak();
 			}
 		});
-		ezarpenak.setText(ResourceBundle.getBundle("Etiquetas").getString("Settings")); //$NON-NLS-1$ //$NON-NLS-2$
+		ezarpenak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Settings")); //$NON-NLS-1$ //$NON-NLS-2$
 		ezarpenak.setBounds(16, 337, 408, 40);
 		contentPane.add(ezarpenak);
 		
@@ -142,7 +143,7 @@ public class BezeroaGUI extends JFrame {
 				irekiArretaZerbitzua();
 			}
 		});
-		arretaZerbitzua.setText(ResourceBundle.getBundle("Etiquetas").getString("CustomerService")); //$NON-NLS-1$ //$NON-NLS-2$
+		arretaZerbitzua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("CustomerService")); //$NON-NLS-1$ //$NON-NLS-2$
 		arretaZerbitzua.setBounds(16, 376, 408, 40);
 		contentPane.add(arretaZerbitzua);
 		
@@ -152,7 +153,7 @@ public class BezeroaGUI extends JFrame {
 				irekiErrepikapena();
 			}
 		});
-		jarraitzaileak.setText(ResourceBundle.getBundle("Etiquetas").getString("CheckFollowers")); //$NON-NLS-1$ //$NON-NLS-2$
+		jarraitzaileak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("CheckFollowers")); //$NON-NLS-1$ //$NON-NLS-2$
 		jarraitzaileak.setBounds(16, 259, 408, 40);
 		contentPane.add(jarraitzaileak);
 	}

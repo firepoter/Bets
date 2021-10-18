@@ -29,6 +29,9 @@ import configuration.UtilDate;
 import domain.Event;
 
 public class GertaeraEzabatuGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
+
+
 	private static final long serialVersionUID = 1L;
 
 
@@ -38,14 +41,14 @@ public class GertaeraEzabatuGUI extends JFrame {
 	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
 	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
-	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents")); //$NON-NLS-1$ //$NON-NLS-2$
-	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate")); //$NON-NLS-1$ //$NON-NLS-2$
+	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("ListEvents")); //$NON-NLS-1$ //$NON-NLS-2$
+	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("EventDate")); //$NON-NLS-1$ //$NON-NLS-2$
 	private JCalendar jCalendar = new JCalendar();
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
 
 	private JScrollPane scrollPaneEvents = new JScrollPane();
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private JButton jButtonClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close"));
 	private JLabel jLabelError = new JLabel();
 	
 	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
@@ -54,7 +57,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 	private final JLabel jLabelErrorDate = new JLabel();
 	
 	private Date firstDay;
-	private final JLabel jLabelMsg = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("GertaeraEzabatuGUI.jLabelMsg.text")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel jLabelMsg = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("GertaeraEzabatuGUI.jLabelMsg.text")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * Launch the application.
@@ -75,7 +78,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("RemoveEventGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("RemoveEventGUI"));
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -116,7 +119,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 		jLabelEventDate.setBounds(40, 16, 140, 25);
 		getContentPane().add(jLabelEventDate);
 		
-		JButton btnDeleteEvent = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Remove")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnDeleteEvent = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Remove")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnDeleteEvent.setEnabled(false);
 		btnDeleteEvent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -129,17 +132,17 @@ public class GertaeraEzabatuGUI extends JFrame {
 					BLFacade facade = MainGUI.getBusinessLogic();
 					facade.ezabatuGertaera(selectedEvent);
 					jLabelMsg.setForeground(Color.GREEN);
-					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("SuccessEvent"));
+					jLabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SuccessEvent"));
 					/* Orain datorren kodea eventuen comboBox-a eguneratzen du */
 					DateFormat dateformat1 = DateFormat.getDateInstance(1, jCalendar.getLocale());
 					
 					Vector<domain.Event> events = facade.getEvents(firstDay);
 
 					if (events.isEmpty())
-						jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
+						jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoEvents")
 								+ ": " + dateformat1.format(calendarAct.getTime()));
 					else
-						jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+						jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Events") + ": "
 								+ dateformat1.format(calendarAct.getTime()));
 					jComboBoxEvents.removeAllItems();
 					System.out.println("Events " + events);
@@ -149,7 +152,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 					jComboBoxEvents.repaint();
 				}else {
 					jLabelMsg.setForeground(Color.RED);
-					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("EventFinished"));
+					jLabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("EventFinished"));
 				}
 			}
 		});
@@ -211,10 +214,10 @@ public class GertaeraEzabatuGUI extends JFrame {
 						Vector<domain.Event> events = facade.getEvents(firstDay);
 
 						if (events.isEmpty())
-							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
+							jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoEvents")
 									+ ": " + dateformat1.format(calendarAct.getTime()));
 						else
-							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+							jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Events") + ": "
 									+ dateformat1.format(calendarAct.getTime()));
 						jComboBoxEvents.removeAllItems();
 						System.out.println("Events " + events);
@@ -249,9 +252,6 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
 		int offset = calendar.get(Calendar.DAY_OF_WEEK);
 
-//		if (Locale.getDefault().equals(new Locale("es")))
-//			offset += 4;
-//		else
 			offset += 5;
 		
 	 	for (Date d:datesWithEventsCurrentMonth){

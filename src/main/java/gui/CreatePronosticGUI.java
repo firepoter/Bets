@@ -19,6 +19,8 @@ import domain.Question;
 import exceptions.PronosticAlreadyExist;
 
 public class CreatePronosticGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
+
 	LangileaGUI aurrekoa;
 
 	private static final long serialVersionUID = 1L;
@@ -26,8 +28,8 @@ public class CreatePronosticGUI extends JFrame {
 	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
 	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
-	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents"));
-	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
+	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("ListEvents"));
+	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("EventDate"));
 
 	private JTextField jPronosticDescription = new JTextField();
 	private JTextField jTextFieldFee = new JTextField();
@@ -36,7 +38,7 @@ public class CreatePronosticGUI extends JFrame {
 	private Calendar calendarAnt = null;
 
 	private JScrollPane scrollPaneEvents = new JScrollPane();
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private JButton jButtonClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 
@@ -53,9 +55,9 @@ public class CreatePronosticGUI extends JFrame {
 	private final JLabel jLabelErrorDescription = new JLabel();
 	private final JLabel jLabelErrorDate = new JLabel();
 	private final JLabel lblNewLabel = new JLabel(
-			ResourceBundle.getBundle("Etiquetas").getString("Description")); //$NON-NLS-1$ //$NON-NLS-2$
+			ResourceBundle.getBundle(ETIQUETAS).getString("Description")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JLabel lblNewLabel_1 = new JLabel(
-			ResourceBundle.getBundle("Etiquetas").getString("Fee")); //$NON-NLS-1$ //$NON-NLS-2$
+			ResourceBundle.getBundle(ETIQUETAS).getString("Fee")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	public CreatePronosticGUI(LangileaGUI aurrekoa) {
 		try {
@@ -70,7 +72,7 @@ public class CreatePronosticGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreatePronosticGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("CreatePronosticGUI"));
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -136,7 +138,7 @@ public class CreatePronosticGUI extends JFrame {
 		getContentPane().add(jLabelEventDate);
 
 		JLabel jLabelListOfQuestions = new JLabel(
-				ResourceBundle.getBundle("Etiquetas").getString("jLabelListOfQuestions")); //$NON-NLS-1$ //$NON-NLS-2$
+				ResourceBundle.getBundle(ETIQUETAS).getString("jLabelListOfQuestions")); //$NON-NLS-1$ //$NON-NLS-2$
 		jLabelListOfQuestions.setBounds(290, 109, 277, 14);
 		getContentPane().add(jLabelListOfQuestions);
 
@@ -160,7 +162,7 @@ public class CreatePronosticGUI extends JFrame {
 		getContentPane().add(jComboBoxQuestions);
 
 		jButtonCreate = new JButton(
-				ResourceBundle.getBundle("Etiquetas").getString("CreatePronosticGUI.jButtonCreate.text")); //$NON-NLS-1$ //$NON-NLS-2$
+				ResourceBundle.getBundle(ETIQUETAS).getString("CreatePronosticGUI.jButtonCreate.text")); //$NON-NLS-1$ //$NON-NLS-2$
 		jButtonCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -186,18 +188,18 @@ public class CreatePronosticGUI extends JFrame {
 							try {
 								BLFacade facade = MainGUI.getBusinessLogic();
 								facade.createPronostic(selectedQuestion, description, fee);
-								jLabelSucces.setText(ResourceBundle.getBundle("Etiquetas").getString("SuccessPronostic"));
+								jLabelSucces.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SuccessPronostic"));
 							} catch (PronosticAlreadyExist exp) {
-								jLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("PronosticExist"));
+								jLabelError.setText(ResourceBundle.getBundle(ETIQUETAS).getString("PronosticExist"));
 							}
 						} else {
-							jLabelErrorDate.setText(ResourceBundle.getBundle("Etiquetas").getString("DatePased"));
+							jLabelErrorDate.setText(ResourceBundle.getBundle(ETIQUETAS).getString("DatePased"));
 						}
 					} else {
-						jLabelErrorDescription.setText(ResourceBundle.getBundle("Etiquetas").getString("DescriptionEmpty"));
+						jLabelErrorDescription.setText(ResourceBundle.getBundle(ETIQUETAS).getString("DescriptionEmpty"));
 					}
 				} else {
-					jLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("InvalidFee"));
+					jLabelError.setText(ResourceBundle.getBundle(ETIQUETAS).getString("InvalidFee"));
 				}
 			}
 		});
@@ -233,8 +235,6 @@ public class CreatePronosticGUI extends JFrame {
 				jLabelErrorDate.setText("");
 				jLabelErrorDescription.setText("");
 				jLabelSucces.setText("");
-//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
-//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
 				if (propertychangeevent.getPropertyName().equals("locale")) {
 					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
 				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
@@ -274,10 +274,10 @@ public class CreatePronosticGUI extends JFrame {
 						Vector<domain.Event> events = facade.getEvents(firstDay);
 
 						if (events.isEmpty())
-							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
+							jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoEvents")
 									+ ": " + dateformat1.format(calendarAct.getTime()));
 						else
-							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+							jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Events") + ": "
 									+ dateformat1.format(calendarAct.getTime()));
 						jComboBoxEvents.removeAllItems();
 						System.out.println("Events " + events);
@@ -307,9 +307,6 @@ public class CreatePronosticGUI extends JFrame {
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
 		int offset = calendar.get(Calendar.DAY_OF_WEEK);
 
-//		if (Locale.getDefault().equals(new Locale("es")))
-//			offset += 4;
-//		else
 			offset += 5;
 
 		for (Date d : datesWithEventsCurrentMonth) {

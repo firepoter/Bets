@@ -53,7 +53,7 @@ class RegisterBLMockTest {
 			Pertsona berria = dataAccess.register("Josu", "Loidi", "Gorostidi", "Josulo", "aaaaaaaa", "123456789", "josulo@gmail.com", dat, "admin");
 			
 			assertEquals(berria.getClass().getName(), cs);
-			assertEquals(berria.izena, "Josu");
+			assertEquals("Josu", berria.izena);
 		} catch (ParseException e) {
 			fail("it should be good");
 		}
@@ -72,7 +72,7 @@ class RegisterBLMockTest {
 			
 			String cs = "domain.Langilea";
 			assertEquals(berria.getClass().getName(), cs);
-			assertEquals(berria.izena, "Jose");
+			assertEquals("Jose", berria.izena);
 		} catch (ParseException e) {
 			fail("it should be good");
 		}
@@ -91,7 +91,7 @@ class RegisterBLMockTest {
 			
 			String cs = "domain.Bezeroa";
 			assertEquals(berria.getClass().getName(), cs);
-			assertEquals(berria.izena, "Saioa");
+			assertEquals("Saioa", berria.izena);
 		} catch (ParseException e) {
 			fail("it should be good");
 		}

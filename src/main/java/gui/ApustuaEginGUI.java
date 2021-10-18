@@ -195,7 +195,7 @@ public class ApustuaEginGUI extends JFrame {
 						double minBet = getMinBet();
 						if(bet<minBet) {
 							jLabelMsg.setForeground(Color.RED);
-							jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("NotMinBet")+" "+minBet+"€");
+							jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("NotMinBet")+" "+minBet+"ï¿½");
 						}else{
 							BLFacade facade = MainGUI.getBusinessLogic();
 							bezeroa=facade.apustuaEgin(pronostikoak,bet,bezeroa);
@@ -387,8 +387,6 @@ public class ApustuaEginGUI extends JFrame {
 				jLabelErrorDate.setText("");
 				jLabelSucces.setText("");
 				pronosticAdded.setText("");
-//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
-//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
 				if (propertychangeevent.getPropertyName().equals("locale")) {
 					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
 				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
@@ -425,13 +423,6 @@ public class ApustuaEginGUI extends JFrame {
 						BLFacade facade = MainGUI.getBusinessLogic();
 
 						Vector<domain.Event> events = facade.getEvents(firstDay);
-//
-//						if (events.isEmpty())
-////							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
-////									+ ": " + dateformat1.format(calendarAct.getTime()));
-//						else
-//							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
-//									+ dateformat1.format(calendarAct.getTime()));
 						jComboBoxEvents.removeAllItems();
 						System.out.println("Events " + events);
 
@@ -460,9 +451,6 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
 		int offset = calendar.get(Calendar.DAY_OF_WEEK);
 
-//		if (Locale.getDefault().equals(new Locale("es")))
-//			offset += 4;
-//		else
 			offset += 5;
 		
 	 	for (Date d:datesWithEventsCurrentMonth){

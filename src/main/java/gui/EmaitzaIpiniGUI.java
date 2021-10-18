@@ -19,6 +19,8 @@ import domain.Pronostikoa;
 import domain.Question;
 
 public class EmaitzaIpiniGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
+
 	LangileaGUI aurrekoa;
 	
 	private static final long serialVersionUID = 1L;
@@ -26,14 +28,14 @@ public class EmaitzaIpiniGUI extends JFrame {
 	private JComboBox<Event> jComboBoxEvents = new JComboBox<Event>();
 	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
 
-	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("ListEvents"));
-	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
+	private JLabel jLabelListOfEvents = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("ListEvents"));
+	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("EventDate"));
 	private JCalendar jCalendar = new JCalendar();
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
 
 	private JScrollPane scrollPaneEvents = new JScrollPane();
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private JButton jButtonClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close"));
 	private JLabel jLabelError = new JLabel();
 	
 	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
@@ -64,7 +66,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("SetResultGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("SetResultGUI"));
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -119,7 +121,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 		jLabelEventDate.setBounds(40, 16, 140, 25);
 		getContentPane().add(jLabelEventDate);
 		
-		JLabel jLabelListOfQuestions = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CreatePronosticGUI.lblNewLabel.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel jLabelListOfQuestions = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("CreatePronosticGUI.lblNewLabel.text")); //$NON-NLS-1$ //$NON-NLS-2$
 		jLabelListOfQuestions.setBounds(290, 109, 277, 14);
 		getContentPane().add(jLabelListOfQuestions);
 		
@@ -149,14 +151,14 @@ public class EmaitzaIpiniGUI extends JFrame {
 		jComboBoxQuestions.setBounds(275, 134, 250, 22);
 		getContentPane().add(jComboBoxQuestions);
 		
-		jButtonCreate = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreatePronosticGUI.jButtonCreate.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		jButtonCreate = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("CreatePronosticGUI.jButtonCreate.text")); //$NON-NLS-1$ //$NON-NLS-2$
 		jButtonCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
 				jLabelErrorDate.setText("");
 				jLabelSucces.setText("");
 				if(selectedQuestion.getResult()!=null) {
-					jLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("QuestionResult"));
+					jLabelError.setText(ResourceBundle.getBundle(ETIQUETAS).getString("QuestionResult"));
 				}else {
 					Date eventDate = jCalendar.getDate();
 					eventDate = UtilDate.trim(eventDate);
@@ -165,9 +167,9 @@ public class EmaitzaIpiniGUI extends JFrame {
 						BLFacade facade = MainGUI.getBusinessLogic();
 						facade.emaitzaIpini(selectedQuestion,selectedPronostic);
 						selectedQuestion.setResult(selectedPronostic.getDeskripzioa());
-						jLabelSucces.setText(ResourceBundle.getBundle("Etiquetas").getString("SuccessResult"));
+						jLabelSucces.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SuccessResult"));
 					}else {
-						jLabelError.setText(ResourceBundle.getBundle("Etiquetas").getString("EventNotFinished"));
+						jLabelError.setText(ResourceBundle.getBundle(ETIQUETAS).getString("EventNotFinished"));
 					}
 				}
 			}
@@ -205,7 +207,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 		jComboBoxPronostics.setModel(pronosticModel);
 		getContentPane().add(jComboBoxPronostics);
 		
-		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EmaitzaIpiniGUI.lblNewLabel.text")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("EmaitzaIpiniGUI.lblNewLabel.text")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel.setBounds(290, 186, 140, 14);
 		getContentPane().add(lblNewLabel);
 
@@ -216,8 +218,6 @@ public class EmaitzaIpiniGUI extends JFrame {
 				jLabelError.setText("");
 				jLabelErrorDate.setText("");
 				jLabelSucces.setText("");
-//				this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
-//					public void propertyChange(PropertyChangeEvent propertychangeevent) {
 				if (propertychangeevent.getPropertyName().equals("locale")) {
 					jCalendar.setLocale((Locale) propertychangeevent.getNewValue());
 				} else if (propertychangeevent.getPropertyName().equals("calendar")) {
@@ -257,10 +257,10 @@ public class EmaitzaIpiniGUI extends JFrame {
 						Vector<domain.Event> events = facade.getEvents(firstDay);
 
 						if (events.isEmpty())
-							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
+							jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoEvents")
 									+ ": " + dateformat1.format(calendarAct.getTime()));
 						else
-							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("Events") + ": "
+							jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Events") + ": "
 									+ dateformat1.format(calendarAct.getTime()));
 						jComboBoxEvents.removeAllItems();
 						System.out.println("Events " + events);
@@ -290,9 +290,6 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
 		int offset = calendar.get(Calendar.DAY_OF_WEEK);
 
-//		if (Locale.getDefault().equals(new Locale("es")))
-//			offset += 4;
-//		else
 			offset += 5;
 		
 	 	for (Date d:datesWithEventsCurrentMonth){

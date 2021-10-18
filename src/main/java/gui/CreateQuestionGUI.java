@@ -204,9 +204,6 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 		int offset = calendar.get(Calendar.DAY_OF_WEEK);
 		System.out.println(offset);
 
-//		if (Locale.getDefault().equals(new Locale("es")))
-//			offset += 4;
-//		else
 			offset += 5;
 		
 		

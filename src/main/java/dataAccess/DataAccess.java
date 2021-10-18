@@ -45,6 +45,7 @@ import exceptions.UserAlreadyExist;
  * It implements the data access to the objectDb database
  */
 public class DataAccess {
+	private static final String _123456789 = "123456789";
 	protected static EntityManager db;
 	protected static EntityManagerFactory emf;
 
@@ -143,17 +144,17 @@ public class DataAccess {
 			Langilea l1 = new Langilea("Oier", "Elola", "Urkizu", "Elola", "aaaaaaaa", "987654321", "oierurkizu@gmail.com", UtilDate.newDate(2001,7,23));
 			Langilea l2 = new Langilea("Unax", "Lazkanotegi", "Bengoetxea", "UnaxLazka", "aaaaaaaa", "384625395","UnaxLazka@gmail.com", UtilDate.newDate(2001,7,23));
 			
-			Bezeroa b1 = new Bezeroa("Tarek", "Chamkhi", "Ermina", "Tarek12301", "aaaaaaaa", "123456789", "Tarek12301@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b2 = new Bezeroa("Josu", "Loidi", "Gorostidi", "Josulo", "aaaaaaaa", "123456789", "josulo@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b1 = new Bezeroa("Tarek", "Chamkhi", "Ermina", "Tarek12301", "aaaaaaaa", _123456789, "Tarek12301@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b2 = new Bezeroa("Josu", "Loidi", "Gorostidi", "Josulo", "aaaaaaaa", _123456789, "josulo@gmail.com",UtilDate.newDate(2001,8,9));
 			b2.setPublikoa(false);
-			Bezeroa b3 = new Bezeroa("Jose", "Garc�a", "Perez", "JoseRamon", "aaaaaaaa", "123456789", "JoseRamon@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b4 = new Bezeroa("Josu", "Perez", "Galdos", "Josueeee", "aaaaaaaa", "123456789", "Josueeee@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b5 = new Bezeroa("Saioa", "Goikoetxea", "Ugarte", "Saioo99", "b", "123456789", "Saioo99@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b6 = new Bezeroa("Mikel", "Artola", "Peraz", "Gamer75", "aaaaaaaa", "123456789", "Gamer75@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b7 = new Bezeroa("Pello", "Garcia", "Lorca", "PelloJoxepe", "aaaaaaaa", "123456789", "PelloJoxepe@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b8 = new Bezeroa("Karmele", "Loidi", "Gorostidi", "Katuu19", "aaaaaaaa", "123456789", "Katuu19@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b9 = new Bezeroa("Eneko", "Sagastume", "Ontsalo", "Ontsalo", "aaaaaaaa", "123456789", "Ontsalo@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b10 = new Bezeroa("Naiara", "Agirre", "Urriza", "Na1ara", "aaaaaaaa", "123456789", "Na1ara@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b3 = new Bezeroa("Jose", "Garc�a", "Perez", "JoseRamon", "aaaaaaaa", _123456789, "JoseRamon@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b4 = new Bezeroa("Josu", "Perez", "Galdos", "Josueeee", "aaaaaaaa", _123456789, "Josueeee@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b5 = new Bezeroa("Saioa", "Goikoetxea", "Ugarte", "Saioo99", "b", _123456789, "Saioo99@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b6 = new Bezeroa("Mikel", "Artola", "Peraz", "Gamer75", "aaaaaaaa", _123456789, "Gamer75@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b7 = new Bezeroa("Pello", "Garcia", "Lorca", "PelloJoxepe", "aaaaaaaa", _123456789, "PelloJoxepe@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b8 = new Bezeroa("Karmele", "Loidi", "Gorostidi", "Katuu19", "aaaaaaaa", _123456789, "Katuu19@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b9 = new Bezeroa("Eneko", "Sagastume", "Ontsalo", "Ontsalo", "aaaaaaaa", _123456789, "Ontsalo@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b10 = new Bezeroa("Naiara", "Agirre", "Urriza", "Na1ara", "aaaaaaaa", _123456789, "Na1ara@gmail.com",UtilDate.newDate(2001,8,9));
 			
 			
 			Event event1 = new Event(21,"Eibar-Celta", UtilDate.newDate(2021, 2, 17));
@@ -639,7 +640,7 @@ public class DataAccess {
 						bezeroa.addMugimendua("Apustuaren dirua itzuli ("+bet.getIdentifikadorea()+")", bet.getKopurua(),"bueltatu");
 						bezeroa.removeApustua(bet);
 						db.remove(bet);
-					}else if(bet.getAsmatutakoKop()==bet.getPronostikoKop()) {
+					}else if(bet.getAsmatutakoKop().equals(bet.getPronostikoKop())) {
 						double komisioa = 0;
 						if (bet.getErrepikatua()!=null) {
 							Bezeroa bez = bet.getErrepikatua();

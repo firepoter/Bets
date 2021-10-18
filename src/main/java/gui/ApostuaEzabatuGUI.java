@@ -160,7 +160,6 @@ public class ApostuaEzabatuGUI extends JFrame {
 					apustuak=bezeroa.getApustuak();
 					if(apustuak.isEmpty()) {
 						scrollPaneApustua.setVisible(false);
-						//jlabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("NoBets"));
 						removeButton.setEnabled(false);
 						removeButton.setVisible(false);
 					}

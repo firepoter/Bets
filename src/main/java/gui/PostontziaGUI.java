@@ -18,6 +18,7 @@ import domain.BezeroartekoMezua;
 import domain.Mezua;
 
 public class PostontziaGUI extends JFrame {
+	private static final String ANSWERED = "Answered";
 	BezeroaGUI aurrekoa;
 	private Bezeroa bezeroa; 
 	private Vector<Mezua> mezuak;
@@ -269,7 +270,7 @@ public class PostontziaGUI extends JFrame {
 								bidalia.setVisible(true);
 								send.setVisible(false);
 								send.setEnabled(false);
-								tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Answered"), selectedRowInd, 3);
+								tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
 								selectedBezeroartekoMezua.setIrakurrita(true);
 								facade.mezuaIrakurri(selectedBezeroartekoMezua);
 							}else {
@@ -284,7 +285,7 @@ public class PostontziaGUI extends JFrame {
 							BLFacade facade = MainGUI.getBusinessLogic();
 							String mezuOsoa = ResourceBundle.getBundle("Etiquetas").getString("NoAcceptRequest")+" "+emaitza.getText();
 							bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), mezuOsoa, ResourceBundle.getBundle("Etiquetas").getString("Denial"), "errepikatuak eskaera ukatu", -1, -1, -1);
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Answered"), selectedRowInd, 3);
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
 							selectedBezeroartekoMezua.setIrakurrita(true);
 							facade.mezuaIrakurri(selectedBezeroartekoMezua);
 						}
@@ -292,7 +293,7 @@ public class PostontziaGUI extends JFrame {
 						if(bai.isSelected()) {
 							BLFacade facade = MainGUI.getBusinessLogic();
 							bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), ResourceBundle.getBundle("Etiquetas").getString("StartRepeat"), ResourceBundle.getBundle("Etiquetas").getString("StartRepeating"), "errepikatzen hasi", selectedBezeroartekoMezua.getZenbatApostatu(), selectedBezeroartekoMezua.getHilabeteanZenbat(), selectedBezeroartekoMezua.getZenbatErrepikatuarentzat());
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Answered"), selectedRowInd, 3);
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
 							selectedBezeroartekoMezua.setIrakurrita(true);
 							facade.mezuaIrakurri(selectedBezeroartekoMezua);
 							facade.errepikatu(bezeroa, selectedBezeroartekoMezua.getIgorlea(), selectedBezeroartekoMezua.getZenbatApostatu(), selectedBezeroartekoMezua.getHilabeteanZenbat(), selectedBezeroartekoMezua.getZenbatErrepikatuarentzat());
@@ -301,7 +302,7 @@ public class PostontziaGUI extends JFrame {
 							if(selectedBezeroartekoMezua.getIgorlea().getKomisioAutomatikoa()==-1) {
 								facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), ResourceBundle.getBundle("Etiquetas").getString("IsNoAgreement"), ResourceBundle.getBundle("Etiquetas").getString("NoAgreement"), "akordiorik ez", -1, -1, -1);	
 							}
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Answered"), selectedRowInd, 3);
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
 							selectedBezeroartekoMezua.setIrakurrita(true);
 							facade.mezuaIrakurri(selectedBezeroartekoMezua);
 						}
@@ -326,7 +327,7 @@ public class PostontziaGUI extends JFrame {
 							facade.arretaMezuaBidali(getElkarrizketa(selectedArretaMezua), mezuarenTestua, true);
 							facade.mezuaIrakurri(selectedArretaMezua);
 							selectedArretaMezua.setIrakurrita(true);
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Answered"), selectedRowInd, 3);
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
 						}
 					}else {
 						Integer puntuazioa = 0;
@@ -350,7 +351,7 @@ public class PostontziaGUI extends JFrame {
 						textArea.setEditable(false);
 						BLFacade facade = MainGUI.getBusinessLogic();
 						facade.gehituPuntuazioa(getElkarrizketa(selectedArretaMezua),puntuazioa);
-						tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Answered"), selectedRowInd, 3);
+						tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
 						selectedArretaMezua.setIrakurrita(true);
 						facade.mezuaIrakurri(selectedArretaMezua);
 						send.setEnabled(false);
@@ -601,8 +602,8 @@ public class PostontziaGUI extends JFrame {
 						nork.setText(ResourceBundle.getBundle("Etiquetas").getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
 						mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
 						baldintzak.setText(ResourceBundle.getBundle("Etiquetas").getString("Conditions"));
-						euroko.setText(ResourceBundle.getBundle("Etiquetas").getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"€");
-						hilabetean.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"€");
+						euroko.setText(ResourceBundle.getBundle("Etiquetas").getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"ï¿½");
+						hilabetean.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"ï¿½");
 						if(!selectedBezeroartekoMezua.isIrakurrita()) {
 							onartuGaldera.setBounds(50, 291, 210, 14);
 							onartuGaldera.setVisible(true);
@@ -631,8 +632,8 @@ public class PostontziaGUI extends JFrame {
 						nork.setText(ResourceBundle.getBundle("Etiquetas").getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
 						mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
 						baldintzak.setText(ResourceBundle.getBundle("Etiquetas").getString("Conditions"));
-						euroko.setText(ResourceBundle.getBundle("Etiquetas").getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"€");
-						hilabetean.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"€");
+						euroko.setText(ResourceBundle.getBundle("Etiquetas").getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"ï¿½");
+						hilabetean.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"ï¿½");
 						komisioa.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("Commission")+" %"+selectedBezeroartekoMezua.getZenbatErrepikatuarentzat()*100);
 						if(!selectedBezeroartekoMezua.isIrakurrita()) {
 							onartuGaldera.setBounds(225, 301, 210, 14);
@@ -739,7 +740,7 @@ public class PostontziaGUI extends JFrame {
 					String egoera = "";
 					if(mota.equals("eskaera") || mota.equals("errepikatuak eskaera onartu")) {
 						if(m.isIrakurrita()) {
-							egoera=ResourceBundle.getBundle("Etiquetas").getString("Answered");
+							egoera=ResourceBundle.getBundle("Etiquetas").getString(ANSWERED);
 						}else {
 							egoera=ResourceBundle.getBundle("Etiquetas").getString("Unanswered");
 						}
@@ -760,7 +761,7 @@ public class PostontziaGUI extends JFrame {
 					row.add(getElkarrizketa((ArretaMezua)m).getGaia());
 					String egoera;
 					if(m.isIrakurrita()) {
-						egoera=ResourceBundle.getBundle("Etiquetas").getString("Answered");
+						egoera=ResourceBundle.getBundle("Etiquetas").getString(ANSWERED);
 					}else {
 						egoera=ResourceBundle.getBundle("Etiquetas").getString("Unanswered");
 					}
@@ -784,7 +785,7 @@ public class PostontziaGUI extends JFrame {
 	private ArretaElkarrizketa getElkarrizketa(ArretaMezua m) {
 		for(ArretaElkarrizketa ae : elkarrizketak) {
 			for(ArretaMezua am : ae.getLangileakBidalitakoak()) {
-				if(am.getIdentifikadorea()==m.getIdentifikadorea()) {
+				if(am.getIdentifikadorea().equals(m.getIdentifikadorea())) {
 					return ae;
 				}
 			}
