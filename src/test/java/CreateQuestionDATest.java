@@ -108,7 +108,7 @@ class CreateQuestionDATest {
 
 	}
 	
-	@Test
+	/*@Test
 	// sut.createQuestion: The event is null.
 	void test3() {
 
@@ -172,7 +172,7 @@ class CreateQuestionDATest {
 			fail("It should be correct: check the date format");
 		}
 
-	}
+	}*/
 	
 	@Test
 	// sut.createQuestion: The betMinimum is negative.
