@@ -13,6 +13,9 @@ import dataAccess.DataAccess;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class ApplicationLauncher { 
 	
 	
@@ -75,7 +78,6 @@ public class ApplicationLauncher {
 			
 			System.out.println("Error in ApplicationLauncher: "+e.toString());
 		}
-		//a.pack();
 
 
 	}

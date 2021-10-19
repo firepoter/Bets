@@ -188,7 +188,7 @@ public class ApustuaEginGUI extends JFrame {
 				jLabelMsg.setText("");
 				pronosticAdded.setText("");
 				try {
-					double bet = Double.valueOf(textFieldBet.getText());
+					double bet = Double.parseDouble(textFieldBet.getText());
 					if(bet>bezeroa.getDirua()) {
 						jLabelMsg.setForeground(Color.RED);
 						jLabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoMoney"));
@@ -475,7 +475,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 	
 	public boolean hartutaDago(Question question) {
 		for(Pronostikoa p : pronostikoak) {
-			if(p.getQuestion().getQuestionNumber()==question.getQuestionNumber()) {
+			if(p.getQuestion().getQuestionNumber().equals(question.getQuestionNumber())) {
 				return true;
 			}
 		}

@@ -51,7 +51,7 @@ class Register2DATest2 {
 			
 			berria = sut.register("Juan", "Carlos", "Calvo", "juana123", "123456", "656532320", "juana123@gmail.com", dat, "admin");
 			assertEquals(berria.getIzena(), exIzena);
-			assertEquals(berria.getClass().getName(), "domain.Admin");
+			assertEquals("domain.Admin", berria.getClass().getName());
 		}catch(ParseException e) {
 			fail("it should be good");
 		}
@@ -68,7 +68,7 @@ class Register2DATest2 {
 			
 			berria = sut.register("Pablo", "Iglesia", "Calvo", "Rem", "aaaaaaaa", "123456789", "Rem@gmail.com", dat, "langilea");
 			assertEquals(berria.getIzena(), exIzena);
-			assertEquals(berria.getClass().getName(), "domain.Langilea");
+			assertEquals("domain.Langilea", berria.getClass().getName());
 		}catch(ParseException e) {
 			fail("it should be good");
 		}
@@ -85,7 +85,7 @@ class Register2DATest2 {
 			
 			berria = sut.register("Horo", "Laurence", "Lafurenche", "Horo66", "b", "123456789", "Horo66@gmail.com", dat, "bezeroa");
 			assertEquals(berria.getIzena(), exIzena);
-			assertEquals(berria.getClass().getName(), "domain.Bezeroa");
+			assertEquals("domain.Bezeroa", berria.getClass().getName());
 		}catch(ParseException e) {
 			fail("it should be good");
 		}

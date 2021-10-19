@@ -134,7 +134,7 @@ public class Apustua implements Serializable{
 	public boolean eguneratuAsmatutakoKop() {
 		asmatutakoKop=asmatutakoKop+1;
 		System.out.println(asmatutakoKop+"=="+pronostikoKop);
-		return asmatutakoKop==pronostikoKop;
+		return asmatutakoKop.equals(pronostikoKop);
 	}
 
 	public Bezeroa getErrepikatua() {
@@ -146,7 +146,7 @@ public class Apustua implements Serializable{
 	}
 	
 	public boolean equals(Apustua apus) {
-		if(this.pronostikoKop!=apus.getPronostikoKop()) {
+		if(this.pronostikoKop.equals(apus.getPronostikoKop())) {
 			return false;
 		}
 		for(Pronostikoa p : pronostikoak) {
