@@ -23,6 +23,7 @@ import javax.swing.JTextArea;
 
 public class ArretaZerbitzuaEskatuGUI extends JFrame {
 
+	private static final String ETIQUETAS = "Etiquetas";
 	/**
 	 * 
 	 */
@@ -56,7 +57,7 @@ public class ArretaZerbitzuaEskatuGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public void ArretaZerbitzuaEskatuGUIExekuzioa() {
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CustomerService"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("CustomerService"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 624, 300);
 		contentPane = new JPanel();
@@ -68,7 +69,7 @@ public class ArretaZerbitzuaEskatuGUI extends JFrame {
 		bezeroC = facade.getBezeroaContainer(bezeroa);
 		elkarrizketak = bezeroC.getElkarrizketak();
 		
-		JButton btnClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				atzera();
@@ -77,7 +78,7 @@ public class ArretaZerbitzuaEskatuGUI extends JFrame {
 		btnClose.setBounds(509, 227, 89, 23);
 		contentPane.add(btnClose);;
 		
-		send = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
+		send = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
 		send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				mezuak.setText("");
@@ -85,29 +86,29 @@ public class ArretaZerbitzuaEskatuGUI extends JFrame {
 				String mezuarenTestua = mezuaArea.getText();
 				if(baduElkarrizketa()) {
 					mezuak.setForeground(Color.RED);
-					mezuak.setText(ResourceBundle.getBundle("Etiquetas").getString("AlreadyTalking"));
+					mezuak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("AlreadyTalking"));
 					ziur=false;
 				}else if(mezuarenTestua.length()==0) {
 					mezuak.setForeground(Color.RED);
-					mezuak.setText(ResourceBundle.getBundle("Etiquetas").getString("MessageEmpty"));
+					mezuak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MessageEmpty"));
 					ziur=false;
 				}else if(mezuarenGaia.length()==0 && !ziur) {
 					mezuak.setForeground(Color.BLACK);
-					mezuak.setText(ResourceBundle.getBundle("Etiquetas").getString("NoSubject"));
+					mezuak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoSubject"));
 					ziur=true;
 				}else {
 					BLFacade facade=MainGUI.getBusinessLogic();
 					ArretaElkarrizketa elkarrizketa = facade.arretaElkarrizketaSortu(bezeroa, mezuarenGaia, mezuarenTestua);
 					elkarrizketak.add(elkarrizketa);
 					mezuak.setForeground(Color.GREEN);
-					mezuak.setText(ResourceBundle.getBundle("Etiquetas").getString("ReveiveAnswer"));
+					mezuak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("ReveiveAnswer"));
 				}
 			}
 		});
 		send.setBounds(33, 227, 89, 23);
 		contentPane.add(send);
 		
-		JLabel gaiaLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Subject")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel gaiaLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Subject")); //$NON-NLS-1$ //$NON-NLS-2$
 		gaiaLabel.setFont(gaiaLabel.getFont().deriveFont(gaiaLabel.getFont().getStyle() | Font.BOLD, gaiaLabel.getFont().getSize() + 1f));
 		gaiaLabel.setBounds(28, 11, 78, 23);
 		contentPane.add(gaiaLabel);
@@ -118,7 +119,7 @@ public class ArretaZerbitzuaEskatuGUI extends JFrame {
 		contentPane.add(gaia);
 		gaia.setColumns(10);
 		
-		JLabel mezuaLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Message")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel mezuaLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Message")); //$NON-NLS-1$ //$NON-NLS-2$
 		mezuaLabel.setFont(mezuaLabel.getFont().deriveFont(mezuaLabel.getFont().getStyle() | Font.BOLD, mezuaLabel.getFont().getSize() + 1f));
 		mezuaLabel.setBounds(28, 44, 94, 23);
 		contentPane.add(mezuaLabel);

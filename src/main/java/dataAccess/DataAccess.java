@@ -45,6 +45,7 @@ import exceptions.UserAlreadyExist;
  * It implements the data access to the objectDb database
  */
 public class DataAccess {
+	private static final String BANKUKO_DIRU_SARRERA = "Bankuko diru-sarrera";
 	private static final String _123456789 = "123456789";
 	protected static EntityManager db;
 	protected static EntityManagerFactory emf;
@@ -178,12 +179,6 @@ public class DataAccess {
 			pronos10 = ques4.addPronostic("Bai", (double)1.3);
 			pronos11 = ques4.addPronostic("Ez", (double)2.5);//
 		
-			pronos12 = q1.addPronostic("1", (double)1.2);
-			pronos13 = q1.addPronostic("X", (double)1.5);//
-			pronos14 = q1.addPronostic("2", (double)1.8);
-			pronos15 = q2.addPronostic("1", (double)1.2);//
-			pronos16 = q2.addPronostic("2", (double)1.6);
-			pronos17 = q2.addPronostic("Golik ez", (double)1.8);
 			pronos12 = q3.addPronostic("1", (double)1.2);
 			pronos13 = q3.addPronostic("X", (double)1.5);//
 			pronos14 = q3.addPronostic("2", (double)1.8);
@@ -209,10 +204,13 @@ public class DataAccess {
 			db.persist(apustua1);
 			db.persist(apustu2);
 			
-			Mugimendua m1,m2,m3,m4;
-			m1 = b2.addMugimendua("Bankuko diru-sarrera", 52, "bankua", UtilDate.newDate(2021, 2, 15));
+			Mugimendua m1;
+			Mugimendua m2;
+			Mugimendua m3;
+			Mugimendua m4;
+			m1 = b2.addMugimendua(BANKUKO_DIRU_SARRERA, 52, "bankua", UtilDate.newDate(2021, 2, 15));
 			m2 = b2.addMugimendua("Apustua egin", -2, "jokatu", UtilDate.newDate(2021, 2, 16));
-			m3 = b2.addMugimendua("Bankuko diru-sarrera", 30, "bankua", UtilDate.newDate(2021, 2, 15));
+			m3 = b2.addMugimendua(BANKUKO_DIRU_SARRERA, 30, "bankua", UtilDate.newDate(2021, 2, 15));
 			m4 = b5.addMugimendua("Apustu errepikatua egin ("+b2+")", -4, "jokatu", UtilDate.newDate(2021, 2, 16));
 			
 			db.persist(event1);
@@ -615,7 +613,7 @@ public class DataAccess {
 	public Bezeroa diruaSartu(double u, Bezeroa bezeroa) {
 		db.getTransaction().begin();
 		Bezeroa erabiltzaile = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
-		erabiltzaile.addMugimendua("Bankuko diru-sarrera", u, "bankua");
+		erabiltzaile.addMugimendua(BANKUKO_DIRU_SARRERA, u, "bankua");
 		db.persist(erabiltzaile);
 		db.getTransaction().commit();
 		return erabiltzaile;

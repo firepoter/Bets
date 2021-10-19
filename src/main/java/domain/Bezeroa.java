@@ -120,7 +120,9 @@ public class Bezeroa extends Pertsona implements Serializable{
 	
 	public ArrayList<Double> getEtekinInformazioa(){
 		ArrayList<Double> emaitza = new ArrayList<Double>();
-		double irabazia, jokatua, etekina;
+		double irabazia;
+		double jokatua;
+		double etekina;
 		irabazia=0;
 		jokatua=0;
 		for(Mugimendua mugimendua : mugimenduak) {

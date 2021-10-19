@@ -24,6 +24,7 @@ import java.awt.event.MouseAdapter;
 public class ErrepikatzaileakGUI extends JFrame {
 
 
+	private static final String ETIQUETAS = "Etiquetas";
 	BezeroaGUI aurrekoa;
 	private Bezeroa bezeroa; 
 	private ArrayList<ErrepikatuakContainer> errepikatzaileak;
@@ -41,11 +42,11 @@ public class ErrepikatzaileakGUI extends JFrame {
 	private DefaultTableModel tableModelJarraituak;
 
 	private String[] columnNamesJarraitzaileak = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("jarraitzaileak"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("jarraitzaileak"), 
 			"", 
 	};
 	private String[] columnNamesJarraituak = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("jarraituak"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("jarraituak"), 
 			"", 
 	};
 
@@ -68,7 +69,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 		this.getContentPane().setLayout(null);
 		
 		this.setSize(new Dimension(630, 470));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CheckFollowers"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("CheckFollowers"));
 		
 		jlabelMsg = new JLabel(""); //$NON-NLS-1$ //$NON-NLS-2$
 		jlabelMsg.setBounds(43, 24, 493, 30);
@@ -86,6 +87,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 		
 		tableJarraitzaileak.setModel(tableModelJarraitzaileak);
 		tableJarraitzaileak.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				int i=tableJarraitzaileak.rowAtPoint(e.getPoint());
 				int j=tableJarraitzaileak.columnAtPoint(e.getPoint());
@@ -120,7 +122,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 		
 		tableJarraituak.setModel(tableModelJarraituak);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				back();
@@ -129,6 +131,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 		btnNewButton.setBounds(22, 388, 117, 29);
 		getContentPane().add(btnNewButton);
 		tableJarraituak.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseClicked(MouseEvent e) {
 				int i=tableJarraituak.rowAtPoint(e.getPoint());
 				int j=tableJarraituak.columnAtPoint(e.getPoint());
@@ -174,7 +177,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 		for(ErrepikatuakContainer e:errepikatzaileak) {
 			row=new Vector<Object>();
 			row.add(e.getErrepikapena().getNork());
-			row.add(ResourceBundle.getBundle("Etiquetas").getString("JarraitzaileaEzabatu")); //$NON-NLS-1$ //$NON-NLS-2$
+			row.add(ResourceBundle.getBundle(ETIQUETAS).getString("JarraitzaileaEzabatu")); //$NON-NLS-1$ //$NON-NLS-2$
 			tableModelJarraitzaileak.addRow(row);
 		}
 		
@@ -189,7 +192,7 @@ public class ErrepikatzaileakGUI extends JFrame {
 		for(ErrepikatuakContainer e:errepikapenak) {
 			row=new Vector<Object>();
 			row.add(e.getErrepikapena().getNori());
-			row.add(ResourceBundle.getBundle("Etiquetas").getString("JarraituaEzabatu")); //$NON-NLS-1$ //$NON-NLS-2$
+			row.add(ResourceBundle.getBundle(ETIQUETAS).getString("JarraituaEzabatu")); //$NON-NLS-1$ //$NON-NLS-2$
 			
 			tableModelJarraituak.addRow(row);
 		}

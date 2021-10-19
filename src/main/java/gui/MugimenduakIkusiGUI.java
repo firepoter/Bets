@@ -24,6 +24,7 @@ import javax.swing.JList;
 
 public class MugimenduakIkusiGUI extends JFrame {
 	
+	private static final String ETIQUETAS = "Etiquetas";
 	private Bezeroa bezeroa;
 	private BezeroaGUI aurrekoa;
 	private static final long serialVersionUID = 1L;
@@ -58,7 +59,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		bezeroa=facade.getBezeroa(bezeroa.getErabiltzaileIzena());
 		
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("SeeMovesGUI")); //$NON-NLS-1$ //$NON-NLS-2$
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("SeeMovesGUI")); //$NON-NLS-1$ //$NON-NLS-2$
 		setBounds(100, 100, 850, 426);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -66,7 +67,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblMugimenduak = new JLabel();
-		lblMugimenduak.setText(ResourceBundle.getBundle("Etiquetas").getString("lblMugimenduak")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblMugimenduak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("lblMugimenduak")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblMugimenduak.setBounds(10, 27, 250, 29);
 		contentPane.add(lblMugimenduak);
 		
@@ -76,7 +77,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 		
 		Vector<Mugimendua> bezeroMugimenduak = bezeroa.getMugimenduak(); 
 		if (bezeroMugimenduak.isEmpty()) {
-			lista.addElement(ResourceBundle.getBundle("Etiquetas").getString("NoMoves"));
+			lista.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("NoMoves"));
 		}else {
 			for(Mugimendua mugimendua : bezeroa.getMugimenduak()) {
 				lista.addElement(mugimendua.toString());
@@ -102,7 +103,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 			list.setCellRenderer( new listaBackground() );
 		}	
 		
-		JButton JButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton JButtonClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
 		JButtonClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				atzera();
@@ -111,18 +112,18 @@ public class MugimenduakIkusiGUI extends JFrame {
 		JButtonClose.setBounds(654, 353, 89, 23);
 		contentPane.add(JButtonClose);
 		
-		JButton bntEtekina = new JButton(ResourceBundle.getBundle("Etiquetas").getString("bntEtekina")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton bntEtekina = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("bntEtekina")); //$NON-NLS-1$ //$NON-NLS-2$
 		bntEtekina.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				jLabelJokatua.setText(ResourceBundle.getBundle("Etiquetas").getString("Play")+": "+jokatua);
-				jLabelIrabazia.setText(ResourceBundle.getBundle("Etiquetas").getString("Win")+": "+irabazia);
+				jLabelJokatua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Play")+": "+jokatua);
+				jLabelIrabazia.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Win")+": "+irabazia);
 				if(etekina<0) {
 					jLabelEtekina.setForeground(Color.RED);
 				}else {
 					jLabelEtekina.setForeground(Color.GREEN);
 				}
-				jLabelEtekina.setText(ResourceBundle.getBundle("Etiquetas").getString("Yield")+": "+etekina);
-				jLabelSaldoa.setText(ResourceBundle.getBundle("Etiquetas").getString("CurrentBalance")+": "+bezeroa.getDirua());
+				jLabelEtekina.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Yield")+": "+etekina);
+				jLabelSaldoa.setText(ResourceBundle.getBundle(ETIQUETAS).getString("CurrentBalance")+": "+bezeroa.getDirua());
 			}
 		});
 		bntEtekina.setBounds(318, 265, 179, 23);
@@ -151,6 +152,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 	private static class listaBackground extends DefaultListCellRenderer {
 		private static final long serialVersionUID = 1L;
 
+		@Override
 		public Component getListCellRendererComponent( JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus ) {
             Component c = super.getListCellRendererComponent( list, value, index, isSelected, cellHasFocus );
             String[] parts = value.toString().split(" ");

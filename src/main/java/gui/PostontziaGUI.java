@@ -18,6 +18,7 @@ import domain.BezeroartekoMezua;
 import domain.Mezua;
 
 public class PostontziaGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
 	private static final String ANSWERED = "Answered";
 	BezeroaGUI aurrekoa;
 	private Bezeroa bezeroa; 
@@ -52,10 +53,10 @@ public class PostontziaGUI extends JFrame {
 	private JLabel komisioa;
 	private JButton remove;
 	private String[] columnNamesMezuak = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("Date"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Who"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Subject"),
-			ResourceBundle.getBundle("Etiquetas").getString("State"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("Date"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Who"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Subject"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("State"),
 	};
 	private JLabel bidalia;
 	private JLabel postontziaHutsik;
@@ -97,7 +98,7 @@ public class PostontziaGUI extends JFrame {
 		scrollPaneMezuak.setVisible(false);
 		scrollPaneMezuak.setViewportView(tableMezua);
 		
-		postontziaHutsik = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("MailBoxEmpty")); //$NON-NLS-1$ //$NON-NLS-2$
+		postontziaHutsik = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("MailBoxEmpty")); //$NON-NLS-1$ //$NON-NLS-2$
 		postontziaHutsik.setFont(postontziaHutsik.getFont().deriveFont(postontziaHutsik.getFont().getStyle() | Font.BOLD, postontziaHutsik.getFont().getSize() + 4f));
 		postontziaHutsik.setBounds(193, 185, 377, 30);
 		postontziaHutsik.setVisible(false);
@@ -107,7 +108,7 @@ public class PostontziaGUI extends JFrame {
 		
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(630, 455));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("Mailbox"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("Mailbox"));
 		
 		scrollPaneMezuak = new JScrollPane();
 		scrollPaneMezuak.setBounds(new Rectangle(138, 273, 406, 116));
@@ -127,12 +128,12 @@ public class PostontziaGUI extends JFrame {
 		labelIrabazia.setBounds(388, 241, 182, 14);
 		getContentPane().add(labelIrabazia);
 		
-		lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Mailbox")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblNewLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Mailbox")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel.setFont(lblNewLabel.getFont().deriveFont(lblNewLabel.getFont().getStyle() | Font.BOLD, lblNewLabel.getFont().getSize() + 2f));
 		lblNewLabel.setBounds(19, 11, 88, 30);
 		getContentPane().add(lblNewLabel);
 		
-		JButton back = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton back = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				back();
@@ -159,12 +160,12 @@ public class PostontziaGUI extends JFrame {
 		hilabetean.setBounds(68, 266, 438, 14);
 		getContentPane().add(hilabetean);
 		
-		onartuGaldera = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("DoYouAccept")); //$NON-NLS-1$ //$NON-NLS-2$
+		onartuGaldera = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("DoYouAccept")); //$NON-NLS-1$ //$NON-NLS-2$
 		onartuGaldera.setBounds(50, 291, 210, 14);
 		getContentPane().add(onartuGaldera);
 		onartuGaldera.setVisible(false);
 		
-		bai = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("Yes")); //$NON-NLS-1$ //$NON-NLS-2$
+		bai = new JRadioButton(ResourceBundle.getBundle(ETIQUETAS).getString("Yes")); //$NON-NLS-1$ //$NON-NLS-2$
 		buttonGroup.add(bai);
 		bai.addActionListener(new ActionListener(){
 		    public void actionPerformed(ActionEvent e) {
@@ -175,7 +176,7 @@ public class PostontziaGUI extends JFrame {
 		    		emaitza.setBounds(302, 313, 77, 20);
 			    	emaitza.setVisible(true);
 			    	batetik.setText("/1");
-			    	labelEmaitza.setText(ResourceBundle.getBundle("Etiquetas").getString("YourBenefit"));
+			    	labelEmaitza.setText(ResourceBundle.getBundle(ETIQUETAS).getString("YourBenefit"));
 			    	send.setBounds(235, 353, 89, 23);
 			    	send.setVisible(true);
 			    	send.setEnabled(true);
@@ -190,7 +191,7 @@ public class PostontziaGUI extends JFrame {
 		getContentPane().add(bai);
 		bai.setVisible(false);
 		
-		ez = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("No")); //$NON-NLS-1$ //$NON-NLS-2$
+		ez = new JRadioButton(ResourceBundle.getBundle(ETIQUETAS).getString("No")); //$NON-NLS-1$ //$NON-NLS-2$
 		buttonGroup.add(ez);
 		ez.addActionListener(new ActionListener(){
 		    public void actionPerformed(ActionEvent e) {
@@ -201,7 +202,7 @@ public class PostontziaGUI extends JFrame {
 		    		emaitza.setBounds(302, 313, 300, 20);
 			    	emaitza.setVisible(true);
 			    	batetik.setText("");
-			    	labelEmaitza.setText(ResourceBundle.getBundle("Etiquetas").getString("Reason"));
+			    	labelEmaitza.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Reason"));
 			    	send.setBounds(235, 353, 89, 23);
 			    	send.setVisible(true);
 			    	send.setEnabled(true);
@@ -231,7 +232,7 @@ public class PostontziaGUI extends JFrame {
 		batetik.setBounds(385, 316, 61, 14);
 		getContentPane().add(batetik);
 		
-		send = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
+		send = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
 		send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				rate.setText("");
@@ -261,20 +262,20 @@ public class PostontziaGUI extends JFrame {
 							try {
 								onura = Double.valueOf(emaitza.getText());
 							}catch(Exception e) {
-								invalid.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+								invalid.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Invalid"));
 							}
 							if(onura>=0 && onura < 1) {
 								BLFacade facade = MainGUI.getBusinessLogic();
-								String mezuOsoa = ResourceBundle.getBundle("Etiquetas").getString("IAccept")+onura*100+" "+ResourceBundle.getBundle("Etiquetas").getString("IAccept2");
-								bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), mezuOsoa, ResourceBundle.getBundle("Etiquetas").getString("Acceptance"), "errepikatuak eskaera onartu", selectedBezeroartekoMezua.getZenbatApostatu(), selectedBezeroartekoMezua.getHilabeteanZenbat(), onura);
+								String mezuOsoa = ResourceBundle.getBundle(ETIQUETAS).getString("IAccept")+onura*100+" "+ResourceBundle.getBundle(ETIQUETAS).getString("IAccept2");
+								bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), mezuOsoa, ResourceBundle.getBundle(ETIQUETAS).getString("Acceptance"), "errepikatuak eskaera onartu", selectedBezeroartekoMezua.getZenbatApostatu(), selectedBezeroartekoMezua.getHilabeteanZenbat(), onura);
 								bidalia.setVisible(true);
 								send.setVisible(false);
 								send.setEnabled(false);
-								tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
+								tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED), selectedRowInd, 3);
 								selectedBezeroartekoMezua.setIrakurrita(true);
 								facade.mezuaIrakurri(selectedBezeroartekoMezua);
 							}else {
-								invalid.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+								invalid.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Invalid"));
 								bidalia.setVisible(false);
 								remove.setVisible(false);
 								remove.setEnabled(false);
@@ -283,26 +284,26 @@ public class PostontziaGUI extends JFrame {
 							}
 						}else {
 							BLFacade facade = MainGUI.getBusinessLogic();
-							String mezuOsoa = ResourceBundle.getBundle("Etiquetas").getString("NoAcceptRequest")+" "+emaitza.getText();
-							bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), mezuOsoa, ResourceBundle.getBundle("Etiquetas").getString("Denial"), "errepikatuak eskaera ukatu", -1, -1, -1);
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
+							String mezuOsoa = ResourceBundle.getBundle(ETIQUETAS).getString("NoAcceptRequest")+" "+emaitza.getText();
+							bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), mezuOsoa, ResourceBundle.getBundle(ETIQUETAS).getString("Denial"), "errepikatuak eskaera ukatu", -1, -1, -1);
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED), selectedRowInd, 3);
 							selectedBezeroartekoMezua.setIrakurrita(true);
 							facade.mezuaIrakurri(selectedBezeroartekoMezua);
 						}
 					}else if (mota.equals("errepikatuak eskaera onartu")) {
 						if(bai.isSelected()) {
 							BLFacade facade = MainGUI.getBusinessLogic();
-							bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), ResourceBundle.getBundle("Etiquetas").getString("StartRepeat"), ResourceBundle.getBundle("Etiquetas").getString("StartRepeating"), "errepikatzen hasi", selectedBezeroartekoMezua.getZenbatApostatu(), selectedBezeroartekoMezua.getHilabeteanZenbat(), selectedBezeroartekoMezua.getZenbatErrepikatuarentzat());
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
+							bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), ResourceBundle.getBundle(ETIQUETAS).getString("StartRepeat"), ResourceBundle.getBundle(ETIQUETAS).getString("StartRepeating"), "errepikatzen hasi", selectedBezeroartekoMezua.getZenbatApostatu(), selectedBezeroartekoMezua.getHilabeteanZenbat(), selectedBezeroartekoMezua.getZenbatErrepikatuarentzat());
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED), selectedRowInd, 3);
 							selectedBezeroartekoMezua.setIrakurrita(true);
 							facade.mezuaIrakurri(selectedBezeroartekoMezua);
 							facade.errepikatu(bezeroa, selectedBezeroartekoMezua.getIgorlea(), selectedBezeroartekoMezua.getZenbatApostatu(), selectedBezeroartekoMezua.getHilabeteanZenbat(), selectedBezeroartekoMezua.getZenbatErrepikatuarentzat());
 						}else {
 							BLFacade facade = MainGUI.getBusinessLogic();
 							if(selectedBezeroartekoMezua.getIgorlea().getKomisioAutomatikoa()==-1) {
-								facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), ResourceBundle.getBundle("Etiquetas").getString("IsNoAgreement"), ResourceBundle.getBundle("Etiquetas").getString("NoAgreement"), "akordiorik ez", -1, -1, -1);	
+								facade.bidaliMezua(bezeroa, selectedBezeroartekoMezua.getIgorlea(), ResourceBundle.getBundle(ETIQUETAS).getString("IsNoAgreement"), ResourceBundle.getBundle(ETIQUETAS).getString("NoAgreement"), "akordiorik ez", -1, -1, -1);	
 							}
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED), selectedRowInd, 3);
 							selectedBezeroartekoMezua.setIrakurrita(true);
 							facade.mezuaIrakurri(selectedBezeroartekoMezua);
 						}
@@ -312,10 +313,10 @@ public class PostontziaGUI extends JFrame {
 						String mezuarenTestua = textArea.getText();
 						if(mezuarenTestua.length()==0) {
 							jakinarazpenak.setForeground(Color.RED);
-							jakinarazpenak.setText(ResourceBundle.getBundle("Etiquetas").getString("MessageEmpty"));
+							jakinarazpenak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MessageEmpty"));
 						}else {
 							jakinarazpenak.setForeground(Color.GREEN);
-							jakinarazpenak.setText(ResourceBundle.getBundle("Etiquetas").getString("Sent"));
+							jakinarazpenak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Sent"));
 							send.setEnabled(false);
 							send.setVisible(false);
 							remove.setBounds(501, 517, 89, 23);
@@ -327,7 +328,7 @@ public class PostontziaGUI extends JFrame {
 							facade.arretaMezuaBidali(getElkarrizketa(selectedArretaMezua), mezuarenTestua, true);
 							facade.mezuaIrakurri(selectedArretaMezua);
 							selectedArretaMezua.setIrakurrita(true);
-							tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
+							tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED), selectedRowInd, 3);
 						}
 					}else {
 						Integer puntuazioa = 0;
@@ -351,7 +352,7 @@ public class PostontziaGUI extends JFrame {
 						textArea.setEditable(false);
 						BLFacade facade = MainGUI.getBusinessLogic();
 						facade.gehituPuntuazioa(getElkarrizketa(selectedArretaMezua),puntuazioa);
-						tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString(ANSWERED), selectedRowInd, 3);
+						tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED), selectedRowInd, 3);
 						selectedArretaMezua.setIrakurrita(true);
 						facade.mezuaIrakurri(selectedArretaMezua);
 						send.setEnabled(false);
@@ -368,7 +369,7 @@ public class PostontziaGUI extends JFrame {
 		invalid.setBounds(434, 316, 46, 14);
 		getContentPane().add(invalid);
 		
-		bidalia = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Sent"));
+		bidalia = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Sent"));
 		bidalia.setForeground(Color.GREEN);
 		bidalia.setBounds(252, 357, 100, 14);
 		bidalia.setVisible(false);
@@ -378,7 +379,7 @@ public class PostontziaGUI extends JFrame {
 		komisioa.setBounds(68, 291, 438, 14);
 		getContentPane().add(komisioa);
 		
-		remove = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Remove"));
+		remove = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Remove"));
 		remove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				bat.setVisible(false);
@@ -427,7 +428,7 @@ public class PostontziaGUI extends JFrame {
 		remove.setBounds(332, 353, 89, 23);
 		getContentPane().add(remove);
 		
-		Eguneratu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Update")); //$NON-NLS-1$ //$NON-NLS-2$
+		Eguneratu = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Update")); //$NON-NLS-1$ //$NON-NLS-2$
 		Eguneratu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				BLFacade facade = MainGUI.getBusinessLogic();
@@ -444,7 +445,7 @@ public class PostontziaGUI extends JFrame {
 		Eguneratu.setBounds(467, 16, 137, 23);
 		getContentPane().add(Eguneratu);
 		
-		erantzun = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Reply")); //$NON-NLS-1$ //$NON-NLS-2$
+		erantzun = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Reply")); //$NON-NLS-1$ //$NON-NLS-2$
 		erantzun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textArea.setText("");
@@ -463,7 +464,7 @@ public class PostontziaGUI extends JFrame {
 		erantzun.setVisible(false);
 		erantzun.setEnabled(false);
 		
-		itzuliMezura = new JButton(ResourceBundle.getBundle("Etiquetas").getString("BackToMessage")); //$NON-NLS-1$ //$NON-NLS-2$
+		itzuliMezura = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("BackToMessage")); //$NON-NLS-1$ //$NON-NLS-2$
 		itzuliMezura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textArea.setText(selectedMezua.getMezua());
@@ -599,11 +600,11 @@ public class PostontziaGUI extends JFrame {
 					aldatuTamaina(630, 455);
 					String mota = selectedBezeroartekoMezua.getMota();
 					if(mota.equals("eskaera")) {
-						nork.setText(ResourceBundle.getBundle("Etiquetas").getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
-						mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
-						baldintzak.setText(ResourceBundle.getBundle("Etiquetas").getString("Conditions"));
-						euroko.setText(ResourceBundle.getBundle("Etiquetas").getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"�");
-						hilabetean.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"�");
+						nork.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
+						mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
+						baldintzak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Conditions"));
+						euroko.setText(ResourceBundle.getBundle(ETIQUETAS).getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"�");
+						hilabetean.setText("-"+ResourceBundle.getBundle(ETIQUETAS).getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"�");
 						if(!selectedBezeroartekoMezua.isIrakurrita()) {
 							onartuGaldera.setBounds(50, 291, 210, 14);
 							onartuGaldera.setVisible(true);
@@ -617,9 +618,9 @@ public class PostontziaGUI extends JFrame {
 							remove.setVisible(true);
 						}
 					}else if (mota.equals("errepikatuak eskaera ukatu")) {
-						nork.setText(ResourceBundle.getBundle("Etiquetas").getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
-						mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
-						tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Read"), selectedRowInd, 3);
+						nork.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
+						mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
+						tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString("Read"), selectedRowInd, 3);
 						if(!selectedBezeroartekoMezua.isIrakurrita()) {
 							BLFacade facade = MainGUI.getBusinessLogic();
 							facade.mezuaIrakurri(selectedBezeroartekoMezua);
@@ -629,12 +630,12 @@ public class PostontziaGUI extends JFrame {
 						remove.setEnabled(true);
 						remove.setVisible(true);
 					}else if (mota.equals("errepikatuak eskaera onartu")) {
-						nork.setText(ResourceBundle.getBundle("Etiquetas").getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
-						mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
-						baldintzak.setText(ResourceBundle.getBundle("Etiquetas").getString("Conditions"));
-						euroko.setText(ResourceBundle.getBundle("Etiquetas").getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"�");
-						hilabetean.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"�");
-						komisioa.setText("-"+ResourceBundle.getBundle("Etiquetas").getString("Commission")+" %"+selectedBezeroartekoMezua.getZenbatErrepikatuarentzat()*100);
+						nork.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
+						mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
+						baldintzak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Conditions"));
+						euroko.setText(ResourceBundle.getBundle(ETIQUETAS).getString("EuroBet")+" "+selectedBezeroartekoMezua.getZenbatApostatu()+"�");
+						hilabetean.setText("-"+ResourceBundle.getBundle(ETIQUETAS).getString("MaxMonth")+" "+selectedBezeroartekoMezua.getHilabeteanZenbat()+"�");
+						komisioa.setText("-"+ResourceBundle.getBundle(ETIQUETAS).getString("Commission")+" %"+selectedBezeroartekoMezua.getZenbatErrepikatuarentzat()*100);
 						if(!selectedBezeroartekoMezua.isIrakurrita()) {
 							onartuGaldera.setBounds(225, 301, 210, 14);
 							onartuGaldera.setVisible(true);
@@ -648,9 +649,9 @@ public class PostontziaGUI extends JFrame {
 							remove.setVisible(true);
 						}
 					}else if (mota.equals("errepikatzen hasi") || mota.equals("akordiorik ez")) {
-						nork.setText(ResourceBundle.getBundle("Etiquetas").getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
-						mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
-						tableModelMezuak.setValueAt(ResourceBundle.getBundle("Etiquetas").getString("Read"), selectedRowInd, 3);
+						nork.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
+						mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
+						tableModelMezuak.setValueAt(ResourceBundle.getBundle(ETIQUETAS).getString("Read"), selectedRowInd, 3);
 						if(!selectedBezeroartekoMezua.isIrakurrita()) {
 							selectedBezeroartekoMezua.setIrakurrita(true);
 							BLFacade facade = MainGUI.getBusinessLogic();
@@ -677,7 +678,7 @@ public class PostontziaGUI extends JFrame {
 					textArea.setVisible(true);
 					textArea.setEditable(false);
 					if(selectedArretaMezua.isAzkena()) {
-						textArea.setText(ResourceBundle.getBundle("Etiquetas").getString("FinalMessage"));
+						textArea.setText(ResourceBundle.getBundle(ETIQUETAS).getString("FinalMessage"));
 						send.setEnabled(false);
 						send.setVisible(false);
 						erantzun.setEnabled(false);
@@ -688,7 +689,7 @@ public class PostontziaGUI extends JFrame {
 							hiru.setVisible(true);
 							lau.setVisible(true);
 							bost.setVisible(true);
-							rate.setText(ResourceBundle.getBundle("Etiquetas").getString("Rate"));
+							rate.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Rate"));
 						}
 					}else {
 						textArea.setText(selectedArretaMezua.getMezua());
@@ -740,30 +741,30 @@ public class PostontziaGUI extends JFrame {
 					String egoera = "";
 					if(mota.equals("eskaera") || mota.equals("errepikatuak eskaera onartu")) {
 						if(m.isIrakurrita()) {
-							egoera=ResourceBundle.getBundle("Etiquetas").getString(ANSWERED);
+							egoera=ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED);
 						}else {
-							egoera=ResourceBundle.getBundle("Etiquetas").getString("Unanswered");
+							egoera=ResourceBundle.getBundle(ETIQUETAS).getString("Unanswered");
 						}
 					}else{
 						if(m.isIrakurrita()) {
-							egoera=ResourceBundle.getBundle("Etiquetas").getString("Read");
+							egoera=ResourceBundle.getBundle(ETIQUETAS).getString("Read");
 						}else {
-							egoera=ResourceBundle.getBundle("Etiquetas").getString("Unread");
+							egoera=ResourceBundle.getBundle(ETIQUETAS).getString("Unread");
 						}
 					}
 					row.add(egoera);
 				}else {
 					if(!((ArretaMezua)m).isAzkena()) {
-						row.add(ResourceBundle.getBundle("Etiquetas").getString("Worker"));
+						row.add(ResourceBundle.getBundle(ETIQUETAS).getString("Worker"));
 					}else {
-						row.add(ResourceBundle.getBundle("Etiquetas").getString("Admin"));
+						row.add(ResourceBundle.getBundle(ETIQUETAS).getString("Admin"));
 					}
 					row.add(getElkarrizketa((ArretaMezua)m).getGaia());
 					String egoera;
 					if(m.isIrakurrita()) {
-						egoera=ResourceBundle.getBundle("Etiquetas").getString(ANSWERED);
+						egoera=ResourceBundle.getBundle(ETIQUETAS).getString(ANSWERED);
 					}else {
-						egoera=ResourceBundle.getBundle("Etiquetas").getString("Unanswered");
+						egoera=ResourceBundle.getBundle(ETIQUETAS).getString("Unanswered");
 					}
 					System.out.println(egoera);
 					row.add(egoera);

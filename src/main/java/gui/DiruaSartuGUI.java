@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 
 public class DiruaSartuGUI extends JFrame {
 
+	private static final String ETIQUETAS = "Etiquetas";
 	/**
 	 * 
 	 */
@@ -47,7 +48,7 @@ public class DiruaSartuGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public void DiruaSartuGUIExekuzioa() {
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("PutMoneyGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("PutMoneyGUI"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -63,12 +64,12 @@ public class DiruaSartuGUI extends JFrame {
 		textField.setColumns(10);
 		
 		JLabel lblEzarriSartuBeharreko = new JLabel();
-		lblEzarriSartuBeharreko.setText(ResourceBundle.getBundle("Etiquetas").getString("lblEzarriSartuBeharreko")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblEzarriSartuBeharreko.setText(ResourceBundle.getBundle(ETIQUETAS).getString("lblEzarriSartuBeharreko")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblEzarriSartuBeharreko.setBounds(39, 62, 241, 28);
 		contentPane.add(lblEzarriSartuBeharreko);
 		
 		BLFacade facade=MainGUI.getBusinessLogic();
-		JButton btnDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("btnDiruaSartu")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnDiruaSartu = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("btnDiruaSartu")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnDiruaSartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jlblSucces.setText("");
@@ -77,12 +78,12 @@ public class DiruaSartuGUI extends JFrame {
 					double zenb= Double.valueOf(textField.getText());
 					if (zenb>1) {
 						bezeroa = facade.diruaSartu(zenb, bezeroa);
-						jlblSucces.setText(ResourceBundle.getBundle("Etiquetas").getString("SuccessMoney"));
+						jlblSucces.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SuccessMoney"));
 					}else {
-						jlblError.setText(ResourceBundle.getBundle("Etiquetas").getString("SartuMinimo"));
+						jlblError.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SartuMinimo"));
 					}
 				} catch(Exception e) {
-					jlblError.setText(ResourceBundle.getBundle("Etiquetas").getString("InvalidSyntax"));
+					jlblError.setText(ResourceBundle.getBundle(ETIQUETAS).getString("InvalidSyntax"));
 				}
 				
 				
@@ -91,7 +92,7 @@ public class DiruaSartuGUI extends JFrame {
 		btnDiruaSartu.setBounds(142, 175, 157, 23);
 		contentPane.add(btnDiruaSartu);
 		
-		JButton btnClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				atzera();

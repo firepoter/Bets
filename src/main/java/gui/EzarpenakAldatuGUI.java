@@ -21,6 +21,10 @@ import java.awt.Font;
 
 public class EzarpenakAldatuGUI extends JFrame {
 
+	private static final String INVALID2 = "Invalid";
+	private static final String ETIQUETAS = "Etiquetas";
+	private static final String COMMISSION = "Commission";
+	private static final String AUTOMATIC_RESPONSE = "AutomaticResponse";
 	/**
 	 * 
 	 */
@@ -64,7 +68,7 @@ public class EzarpenakAldatuGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public void EzarpenakAldatuGUIExekuzioa() {
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("Settings"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("Settings"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 580, 197);
 		contentPane = new JPanel();
@@ -72,7 +76,7 @@ public class EzarpenakAldatuGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				atzera();
@@ -82,22 +86,22 @@ public class EzarpenakAldatuGUI extends JFrame {
 		contentPane.add(btnClose);
 		
 		if(bezeroa.isPublikoa()) {
-			mota=ResourceBundle.getBundle("Etiquetas").getString("Public");
+			mota=ResourceBundle.getBundle(ETIQUETAS).getString("Public");
 		}else {
-			mota=ResourceBundle.getBundle("Etiquetas").getString("Private");
+			mota=ResourceBundle.getBundle(ETIQUETAS).getString("Private");
 		}
-		kontuMota = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("TypeAccount")+" "+mota); //$NON-NLS-1$ //$NON-NLS-2$
+		kontuMota = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("TypeAccount")+" "+mota); //$NON-NLS-1$ //$NON-NLS-2$
 		kontuMota.setBounds(31, 33, 359, 14);
 		contentPane.add(kontuMota);
 		
 		String automatikoa;
 		double komisioAuto = bezeroa.getKomisioAutomatikoa();
 		if(komisioAuto==-1) {
-			automatikoa=ResourceBundle.getBundle("Etiquetas").getString("No");
+			automatikoa=ResourceBundle.getBundle(ETIQUETAS).getString("No");
 		}else {
-			automatikoa=ResourceBundle.getBundle("Etiquetas").getString("Yes");
+			automatikoa=ResourceBundle.getBundle(ETIQUETAS).getString("Yes");
 		}
-		komisioAutomatikoa = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("AutomaticResponse")+" "+automatikoa); //$NON-NLS-1$ //$NON-NLS-2$
+		komisioAutomatikoa = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString(AUTOMATIC_RESPONSE)+" "+automatikoa); //$NON-NLS-1$ //$NON-NLS-2$
 		komisioAutomatikoa.setBounds(31, 60, 359, 14);
 		contentPane.add(komisioAutomatikoa);
 		
@@ -105,27 +109,27 @@ public class EzarpenakAldatuGUI extends JFrame {
 		komisioa.setBounds(69, 88, 282, 14);
 		contentPane.add(komisioa);
 		if(komisioAuto!=-1) {
-			komisioa.setText(ResourceBundle.getBundle("Etiquetas").getString("Commission")+" "+komisioAuto);
+			komisioa.setText(ResourceBundle.getBundle(ETIQUETAS).getString(COMMISSION)+" "+komisioAuto);
 		}
 		
-		pribatua = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("Private")); //$NON-NLS-1$ //$NON-NLS-2$
+		pribatua = new JRadioButton(ResourceBundle.getBundle(ETIQUETAS).getString("Private")); //$NON-NLS-1$ //$NON-NLS-2$
 		buttonGroup.add(pribatua);
 		pribatua.setBounds(229, 30, 110, 23);
 		contentPane.add(pribatua);
 		pribatua.setVisible(false);
 		
-		publikoa = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("Public")); //$NON-NLS-1$ //$NON-NLS-2$
+		publikoa = new JRadioButton(ResourceBundle.getBundle(ETIQUETAS).getString("Public")); //$NON-NLS-1$ //$NON-NLS-2$
 		buttonGroup.add(publikoa);
 		publikoa.setBounds(341, 30, 100, 23);
 		contentPane.add(publikoa);
 		publikoa.setVisible(false);
 		
-		bai = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("Yes")); //$NON-NLS-1$ //$NON-NLS-2$
+		bai = new JRadioButton(ResourceBundle.getBundle(ETIQUETAS).getString("Yes")); //$NON-NLS-1$ //$NON-NLS-2$
 		buttonGroup_1.add(bai);
 		bai.addActionListener(new ActionListener(){
 		    public void actionPerformed(ActionEvent e) {
 		    	balioa.setText("");
-		    	komisioa.setText(ResourceBundle.getBundle("Etiquetas").getString("Commission"));
+		    	komisioa.setText(ResourceBundle.getBundle(ETIQUETAS).getString(COMMISSION));
 		    	balioa.setVisible(true);
 				batetik.setVisible(true);
 		    }
@@ -134,7 +138,7 @@ public class EzarpenakAldatuGUI extends JFrame {
 		contentPane.add(bai);
 		bai.setVisible(false);
 		
-		ez = new JRadioButton(ResourceBundle.getBundle("Etiquetas").getString("No")); //$NON-NLS-1$ //$NON-NLS-2$
+		ez = new JRadioButton(ResourceBundle.getBundle(ETIQUETAS).getString("No")); //$NON-NLS-1$ //$NON-NLS-2$
 		buttonGroup_1.add(ez);
 		ez.addActionListener(new ActionListener(){
 		    public void actionPerformed(ActionEvent e) {
@@ -160,7 +164,7 @@ public class EzarpenakAldatuGUI extends JFrame {
 		contentPane.add(batetik);
 		batetik.setVisible(false);
 		
-		gorde = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Save")); //$NON-NLS-1$ //$NON-NLS-2$
+		gorde = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Save")); //$NON-NLS-1$ //$NON-NLS-2$
 		gorde.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				boolean ondo = true;
@@ -187,24 +191,24 @@ public class EzarpenakAldatuGUI extends JFrame {
 				}
 				if(ondo) {
 					if(publikoa.isSelected()) {
-						mota=ResourceBundle.getBundle("Etiquetas").getString("Public");
+						mota=ResourceBundle.getBundle(ETIQUETAS).getString("Public");
 					}else {
-						mota=ResourceBundle.getBundle("Etiquetas").getString("Private");
+						mota=ResourceBundle.getBundle(ETIQUETAS).getString("Private");
 					}
 					BLFacade facade=MainGUI.getBusinessLogic();
 					bezeroa = facade.eguneratuEzarpenak(bezeroa, komisioBerria, publikoa.isSelected());
 					editatu.setVisible(true);
 					editatu.setEnabled(true);
-					kontuMota.setText(ResourceBundle.getBundle("Etiquetas").getString("TypeAccount")+" "+mota);
+					kontuMota.setText(ResourceBundle.getBundle(ETIQUETAS).getString("TypeAccount")+" "+mota);
 					String automatikoaDa;
 					double komisioAutom = bezeroa.getKomisioAutomatikoa();
 					if(komisioAutom==-1) {
-						automatikoaDa=ResourceBundle.getBundle("Etiquetas").getString("No");
+						automatikoaDa=ResourceBundle.getBundle(ETIQUETAS).getString("No");
 					}else {
-						automatikoaDa=ResourceBundle.getBundle("Etiquetas").getString("Yes");
-						komisioa.setText(ResourceBundle.getBundle("Etiquetas").getString("Commission")+" "+komisioAutom);
+						automatikoaDa=ResourceBundle.getBundle(ETIQUETAS).getString("Yes");
+						komisioa.setText(ResourceBundle.getBundle(ETIQUETAS).getString(COMMISSION)+" "+komisioAutom);
 					}
-					komisioAutomatikoa.setText(ResourceBundle.getBundle("Etiquetas").getString("AutomaticResponse")+" "+automatikoaDa);
+					komisioAutomatikoa.setText(ResourceBundle.getBundle(ETIQUETAS).getString(AUTOMATIC_RESPONSE)+" "+automatikoaDa);
 					bai.setVisible(false);
 					ez.setVisible(false);
 					publikoa.setVisible(false);
@@ -221,13 +225,13 @@ public class EzarpenakAldatuGUI extends JFrame {
 		gorde.setVisible(false);
 		gorde.setEnabled(false);
 		
-		editatu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Edit")); //$NON-NLS-1$ //$NON-NLS-2$
+		editatu = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Edit")); //$NON-NLS-1$ //$NON-NLS-2$
 		editatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				editatu.setVisible(false);
 				editatu.setEnabled(false);
-				kontuMota.setText(ResourceBundle.getBundle("Etiquetas").getString("TypeAccount"));
-				komisioAutomatikoa.setText(ResourceBundle.getBundle("Etiquetas").getString("AutomaticResponse"));
+				kontuMota.setText(ResourceBundle.getBundle(ETIQUETAS).getString("TypeAccount"));
+				komisioAutomatikoa.setText(ResourceBundle.getBundle(ETIQUETAS).getString(AUTOMATIC_RESPONSE));
 				komisioa.setText("");
 				bai.setVisible(true);
 				ez.setVisible(true);
@@ -240,19 +244,19 @@ public class EzarpenakAldatuGUI extends JFrame {
 		editatu.setBounds(253, 113, 89, 23);
 		contentPane.add(editatu);
 		
-		invalid = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Invalid")); //$NON-NLS-1$ //$NON-NLS-2$
+		invalid = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString(INVALID2)); //$NON-NLS-1$ //$NON-NLS-2$
 		invalid.setForeground(Color.RED);
 		invalid.setBounds(455, 35, 72, 14);
 		contentPane.add(invalid);
 		invalid.setVisible(false);
 		
-		invalid_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Invalid")); //$NON-NLS-1$ //$NON-NLS-2$
+		invalid_1 = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString(INVALID2)); //$NON-NLS-1$ //$NON-NLS-2$
 		invalid_1.setForeground(Color.RED);
 		invalid_1.setBounds(454, 60, 110, 14);
 		contentPane.add(invalid_1);
 		invalid_1.setVisible(false);
 		
-		invalid_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Invalid")); //$NON-NLS-1$ //$NON-NLS-2$
+		invalid_2 = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString(INVALID2)); //$NON-NLS-1$ //$NON-NLS-2$
 		invalid_2.setForeground(Color.RED);
 		invalid_2.setBounds(289, 88, 120, 14);
 		contentPane.add(invalid_2);

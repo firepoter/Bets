@@ -17,21 +17,22 @@ import exceptions.EventAlreadyExist;
 
 
 public class CreateEventGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
 	private static final long serialVersionUID = 1L;
 	DefaultComboBoxModel<Event> modelEvents = new DefaultComboBoxModel<Event>();
-	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("EventDate"));
+	private JLabel jLabelEventDate = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("EventDate"));
 
 	private JTextField jEventDescription = new JTextField();
 	private JCalendar jCalendar = new JCalendar();
 
 	private JScrollPane scrollPaneEvents = new JScrollPane();
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+	private JButton jButtonClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close"));
 	private JLabel jLabelError1 = new JLabel();
 	private JLabel jLabelError2 = new JLabel();
 	private JLabel jLabelSucces;
 	
 	private LangileaGUI aurrekoLangilea;
-	private final JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Description")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Description")); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	public CreateEventGUI(LangileaGUI aurrekoLangilea) {
 		try {
@@ -47,7 +48,7 @@ public class CreateEventGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("CreateEventGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("CreateEventGUI"));
 		jEventDescription.setBounds(new Rectangle(119, 211, 429, 18));
 
 		jCalendar.setBounds(new Rectangle(40, 50, 225, 150));
@@ -73,7 +74,7 @@ public class CreateEventGUI extends JFrame {
 		jLabelEventDate.setBounds(25, 11, 140, 25);
 		getContentPane().add(jLabelEventDate);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CreateEvent")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("CreateEvent")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError1.setText("");
@@ -90,15 +91,15 @@ public class CreateEventGUI extends JFrame {
 						try {
 							BLFacade facade = MainGUI.getBusinessLogic();
 							facade.createEvent(description,eventDate);
-							jLabelSucces.setText(ResourceBundle.getBundle("Etiquetas").getString("SuccesEvent"));
+							jLabelSucces.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SuccesEvent"));
 						}catch (EventAlreadyExist exp){
-							jLabelError1.setText(ResourceBundle.getBundle("Etiquetas").getString("EventExist"));
+							jLabelError1.setText(ResourceBundle.getBundle(ETIQUETAS).getString("EventExist"));
 						}
 					}else {
-						jLabelError2.setText(ResourceBundle.getBundle("Etiquetas").getString("DatePased"));
+						jLabelError2.setText(ResourceBundle.getBundle(ETIQUETAS).getString("DatePased"));
 					}
 				}else {
-					jLabelError1.setText(ResourceBundle.getBundle("Etiquetas").getString("DescriptionEmpty"));
+					jLabelError1.setText(ResourceBundle.getBundle(ETIQUETAS).getString("DescriptionEmpty"));
 				}
 				
 			}

@@ -16,6 +16,7 @@ import domain.PronostikoaContainer;
 import exceptions.EventFinished;
 
 public class ApostuaEzabatuGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
 	BezeroaGUI aurrekoa;
 	private Bezeroa bezeroa; 
 	private Vector<Apustua> apustuak;
@@ -34,12 +35,12 @@ public class ApostuaEzabatuGUI extends JFrame {
 	private DefaultTableModel tableModelApustua;
 
 	private String[] columnNamesApustua = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("EventDate"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Event"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Query"),
-			ResourceBundle.getBundle("Etiquetas").getString("Result"),
-			ResourceBundle.getBundle("Etiquetas").getString("Kuota"),
-			ResourceBundle.getBundle("Etiquetas").getString("FinalResult")
+			ResourceBundle.getBundle(ETIQUETAS).getString("EventDate"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Event"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Query"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("Result"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("Kuota"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("FinalResult")
 	};
 	private JLabel labelJokatua;
 	private JLabel labelKuota;
@@ -65,7 +66,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 		this.getContentPane().setLayout(null);
 		
 		this.setSize(new Dimension(630, 470));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("DeleteBetGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("DeleteBetGUI"));
 		
 		jlabelMsg = new JLabel(""); //$NON-NLS-1$ //$NON-NLS-2$
 		jlabelMsg.setBounds(50, 23, 493, 30);
@@ -121,9 +122,9 @@ public class ApostuaEzabatuGUI extends JFrame {
 						}		
 						tableModelApustua.addRow(row);
 					}
-					labelJokatua.setText(ResourceBundle.getBundle("Etiquetas").getString("Played")+" "+selectedApustua.getKopurua());
-					labelKuota.setText(ResourceBundle.getBundle("Etiquetas").getString("TotalFee")+" "+selectedApustua.getKuotaTotala());
-					labelIrabazia.setText(ResourceBundle.getBundle("Etiquetas").getString("Potential")+" "+selectedApustua.getKopurua()*selectedApustua.getKuotaTotala());
+					labelJokatua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Played")+" "+selectedApustua.getKopurua());
+					labelKuota.setText(ResourceBundle.getBundle(ETIQUETAS).getString("TotalFee")+" "+selectedApustua.getKuotaTotala());
+					labelIrabazia.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Potential")+" "+selectedApustua.getKopurua()*selectedApustua.getKuotaTotala());
 					tableApustua.getColumnModel().getColumn(0).setPreferredWidth(25);
 					tableApustua.getColumnModel().getColumn(1).setPreferredWidth(60);
 					tableApustua.getColumnModel().getColumn(2).setPreferredWidth(150);
@@ -131,7 +132,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 					tableApustua.getColumnModel().getColumn(4).setPreferredWidth(2);
 					tableApustua.getColumnModel().getColumn(5).setPreferredWidth(20);
 				}else {
-					jlabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("NoBets"));
+					jlabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoBets"));
 					removeButton.setVisible(false);
 					removeButton.setEnabled(false);
 					labelJokatua.setText("");
@@ -147,7 +148,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 			comboBox.setVisible(false);
 		}
 		
-		removeButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Remove")); //$NON-NLS-1$ //$NON-NLS-2$
+		removeButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Remove")); //$NON-NLS-1$ //$NON-NLS-2$
 		removeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				labeMsg.setText("");
@@ -155,7 +156,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 					BLFacade facade = MainGUI.getBusinessLogic();
 					bezeroa=facade.deleteApustua(selectedApustua);
 					labeMsg.setForeground(Color.GREEN);
-					labeMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("SuccessEvent"));
+					labeMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SuccessEvent"));
 					apustuakModel.removeAllElements();
 					apustuak=bezeroa.getApustuak();
 					if(apustuak.isEmpty()) {
@@ -169,7 +170,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 					selectedApustua=((domain.Apustua) comboBox.getSelectedItem());
 				}catch(EventFinished e){
 					labeMsg.setForeground(Color.RED);
-					labeMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("EventsFinished"));
+					labeMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("EventsFinished"));
 				}
 			}
 		});
@@ -195,7 +196,7 @@ public class ApostuaEzabatuGUI extends JFrame {
 		labeMsg.setBounds(78, 267, 366, 22);
 		getContentPane().add(labeMsg);
 		
-		JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton jButtonClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
 		jButtonClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				back();
@@ -206,9 +207,9 @@ public class ApostuaEzabatuGUI extends JFrame {
 		getContentPane().add(jButtonClose);
 		
 		if(apustuak.isEmpty()) {
-			jlabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("NoBets"));
+			jlabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoBets"));
 		}else {
-			jlabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("ChooseBet"));
+			jlabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("ChooseBet"));
 			for(Apustua a:apustuak) {
 				apustuakModel.addElement(a);
 			}

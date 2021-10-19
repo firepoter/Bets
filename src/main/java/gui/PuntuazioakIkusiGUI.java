@@ -19,6 +19,8 @@ import domain.Langilea;
 
 public class PuntuazioakIkusiGUI extends JFrame {
 
+	private static final String ETIQUETAS = "Etiquetas";
+
 	/**
 	 * 
 	 */
@@ -34,16 +36,16 @@ public class PuntuazioakIkusiGUI extends JFrame {
 	private DefaultTableModel tableModelBalorazioak;
 	
 	private String[] columnNamesJarraitzaileak = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("jName"), 
-			ResourceBundle.getBundle("Etiquetas").getString("jFName"),
-			ResourceBundle.getBundle("Etiquetas").getString("jSName"),
-			ResourceBundle.getBundle("Etiquetas").getString("jUsername"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("jName"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("jFName"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("jSName"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("jUsername"),
 			"5",
 			"4",
 			"3",
 			"2",
 			"1",
-			ResourceBundle.getBundle("Etiquetas").getString("kalifikazioa"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("kalifikazioa"),
 			
 	};
 	
@@ -95,7 +97,7 @@ public class PuntuazioakIkusiGUI extends JFrame {
 		tableModelBalorazioak.setDataVector(null, columnNamesJarraitzaileak);
 		
 
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				back();
@@ -128,7 +130,6 @@ public class PuntuazioakIkusiGUI extends JFrame {
 				tableModelBalorazioak.addRow(row);
 			}else {
 				row=new Vector<Object>();
-				balorazioak=l.getBalorazioak();
 				row.add(0, l.getIzena());
 				row.add(1, l.getAbizena1());
 				row.add(2, l.getAbizena2());

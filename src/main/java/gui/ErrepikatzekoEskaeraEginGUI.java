@@ -23,6 +23,7 @@ import java.awt.Font;
 
 public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 
+	private static final String ETIQUETAS = "Etiquetas";
 	/**
 	 * 
 	 */
@@ -72,7 +73,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public void ErrepikatzekoEskaeraEginGUIExekuzioa() {
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("RequestToRepeat"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("RequestToRepeat"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 624, 300);
 		contentPane = new JPanel();
@@ -82,7 +83,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 		
 		BLFacade facade=MainGUI.getBusinessLogic();
 		
-		JButton btnClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnClose = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				atzera();
@@ -96,7 +97,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 		contentPane.add(bilatzailea);
 		bilatzailea.setColumns(10);
 		
-		search = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Search")); //$NON-NLS-1$ //$NON-NLS-2$
+		search = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Search")); //$NON-NLS-1$ //$NON-NLS-2$
 		search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				success.setText("");
@@ -116,7 +117,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 				String text = bilatzailea.getText();
 				Vector<Bezeroa> bezeroak = facade.getBezeroak(text, bezeroa);
 				if(bezeroak.isEmpty()) {
-					erabiltzailerikEz.setText(ResourceBundle.getBundle("Etiquetas").getString("NoUserfound"));
+					erabiltzailerikEz.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoUserfound"));
 					comboBox.setVisible(false);
 				}else {
 					comboBox.setVisible(true);
@@ -131,7 +132,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 		search.setBounds(376, 33, 116, 20);
 		contentPane.add(search);
 		
-		requestButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("RequestToRepeat")); //$NON-NLS-1$ //$NON-NLS-2$
+		requestButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("RequestToRepeat")); //$NON-NLS-1$ //$NON-NLS-2$
 		requestButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				success.setText("");
@@ -149,9 +150,9 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 				mezua.setVisible(true);
 				send.setVisible(true);
 				send.setEnabled(true);
-				norentzat.setText(ResourceBundle.getBundle("Etiquetas").getString("For")+" "+selectedBezeroa.getErabiltzaileIzena());
-				zenbatApostatu.setText(ResourceBundle.getBundle("Etiquetas").getString("HowManyBet"));
-				hilabeteanMax.setText(ResourceBundle.getBundle("Etiquetas").getString("MaxMonth"));
+				norentzat.setText(ResourceBundle.getBundle(ETIQUETAS).getString("For")+" "+selectedBezeroa.getErabiltzaileIzena());
+				zenbatApostatu.setText(ResourceBundle.getBundle(ETIQUETAS).getString("HowManyBet"));
+				hilabeteanMax.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MaxMonth"));
 				zenbatekoApustua.setVisible(true);
 				hilabetekoMax.setVisible(true);
 			}
@@ -167,20 +168,20 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 				selectedBezeroa=((domain.Bezeroa) comboBox.getSelectedItem());
 				
 				if(selectedBezeroa!=null) {
-					username.setText(ResourceBundle.getBundle("Etiquetas").getString("UserName")+" "+selectedBezeroa.getErabiltzaileIzena());
-					apustuKop.setText(ResourceBundle.getBundle("Etiquetas").getString("BetsMade")+" "+selectedBezeroa.getJokatuak());
-					irabaziKop.setText(ResourceBundle.getBundle("Etiquetas").getString("BetsWon")+" "+selectedBezeroa.getIrabaziak());
+					username.setText(ResourceBundle.getBundle(ETIQUETAS).getString("UserName")+" "+selectedBezeroa.getErabiltzaileIzena());
+					apustuKop.setText(ResourceBundle.getBundle(ETIQUETAS).getString("BetsMade")+" "+selectedBezeroa.getJokatuak());
+					irabaziKop.setText(ResourceBundle.getBundle(ETIQUETAS).getString("BetsWon")+" "+selectedBezeroa.getIrabaziak());
 					if(selectedBezeroa.getJokatuak()!=0) {
-						portzentaia.setText(ResourceBundle.getBundle("Etiquetas").getString("PercentageSuccess")+" % "+((double) selectedBezeroa.getIrabaziak() / (double) selectedBezeroa.getJokatuak() * 100.0));
+						portzentaia.setText(ResourceBundle.getBundle(ETIQUETAS).getString("PercentageSuccess")+" % "+((double) selectedBezeroa.getIrabaziak() / (double) selectedBezeroa.getJokatuak() * 100.0));
 
 					}else {
-						portzentaia.setText(ResourceBundle.getBundle("Etiquetas").getString("PercentageSuccess")+" % "+0);
+						portzentaia.setText(ResourceBundle.getBundle(ETIQUETAS).getString("PercentageSuccess")+" % "+0);
 
 					}
 					ArrayList<Double> x = selectedBezeroa.getEtekinInformazioa();
-					jokatua.setText(ResourceBundle.getBundle("Etiquetas").getString("Played")+" "+x.get(0));
-					irabazia.setText(ResourceBundle.getBundle("Etiquetas").getString("Win")+" "+x.get(1));
-					etekina.setText(ResourceBundle.getBundle("Etiquetas").getString("Yield")+" "+x.get(2));
+					jokatua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Played")+" "+x.get(0));
+					irabazia.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Win")+" "+x.get(1));
+					etekina.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Yield")+" "+x.get(2));
 					requestButton.setEnabled(true);
 					requestButton.setVisible(true);
 				}
@@ -259,42 +260,43 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 		hilabetekoMax.setColumns(10);
 		hilabetekoMax.setVisible(false);;
 		
-		send = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
+		send = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
 		send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				invalid1.setText("");
 				invalid2.setText("");
 				success.setText("");
-				double apostatukoDena=-1, apustuaHilabetean=-1; 
+				double apostatukoDena=-1;
+				double apustuaHilabetean=-1; 
 				try {
 					apostatukoDena = Double.valueOf(zenbatekoApustua.getText());
 				}catch (Exception e) {
-					invalid1.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+					invalid1.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Invalid"));
 				}
 				try {
 					apustuaHilabetean = Double.valueOf(hilabetekoMax.getText());
 				}catch (Exception e) {
-					invalid2.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+					invalid2.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Invalid"));
 				}
 				if(apostatukoDena<=0) {
-					invalid1.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+					invalid1.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Invalid"));
 				}
 				if(apustuaHilabetean<1) {
-					invalid2.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid1"));
+					invalid2.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Invalid1"));
 				}
 				if(apostatukoDena>0 && apustuaHilabetean>=1) {
 					BLFacade facade = MainGUI.getBusinessLogic();
 					if(selectedBezeroa.getKomisioAutomatikoa()==-1) {
 						String mezuarenTestua = mezua.getText();
-						bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroa, mezuarenTestua, ResourceBundle.getBundle("Etiquetas").getString("RepeatRequest"), "eskaera", apostatukoDena, apustuaHilabetean, -1);
+						bezeroa=facade.bidaliMezua(bezeroa, selectedBezeroa, mezuarenTestua, ResourceBundle.getBundle(ETIQUETAS).getString("RepeatRequest"), "eskaera", apostatukoDena, apustuaHilabetean, -1);
 					}else {
-						String mezuOsoa = ResourceBundle.getBundle("Etiquetas").getString("IAccept")+selectedBezeroa.getKomisioAutomatikoa()*100+" "+ResourceBundle.getBundle("Etiquetas").getString("IAccept2");
-						facade.bidaliMezua(selectedBezeroa, bezeroa, mezuOsoa, ResourceBundle.getBundle("Etiquetas").getString("Acceptance"), "errepikatuak eskaera onartu", apostatukoDena, apustuaHilabetean, selectedBezeroa.getKomisioAutomatikoa());
+						String mezuOsoa = ResourceBundle.getBundle(ETIQUETAS).getString("IAccept")+selectedBezeroa.getKomisioAutomatikoa()*100+" "+ResourceBundle.getBundle(ETIQUETAS).getString("IAccept2");
+						facade.bidaliMezua(selectedBezeroa, bezeroa, mezuOsoa, ResourceBundle.getBundle(ETIQUETAS).getString("Acceptance"), "errepikatuak eskaera onartu", apostatukoDena, apustuaHilabetean, selectedBezeroa.getKomisioAutomatikoa());
 					}
-					success.setText(ResourceBundle.getBundle("Etiquetas").getString("RequestSent"));
+					success.setText(ResourceBundle.getBundle(ETIQUETAS).getString("RequestSent"));
 					bezeroakModel.removeElement(selectedBezeroa);
 					if(bezeroakModel.getSize()==0) {
-						erabiltzailerikEz.setText(ResourceBundle.getBundle("Etiquetas").getString("NoUserfound"));
+						erabiltzailerikEz.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoUserfound"));
 						comboBox.setVisible(false);
 					}
 					mezua.setText("");

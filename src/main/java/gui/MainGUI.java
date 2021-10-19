@@ -23,6 +23,8 @@ import java.awt.event.ActionEvent;
 
 public class MainGUI extends JFrame {
 	
+	private static final String ETIQUETAS = "Etiquetas";
+
 	private static final long serialVersionUID = 1L;
 
 	private JPanel jContentPane = null;
@@ -55,7 +57,6 @@ public class MainGUI extends JFrame {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				try {
-					//if (ConfigXML.getInstance().isBusinessLogicLocal()) facade.close();
 				} catch (Exception e1) {
 					System.out.println("Error: "+e1.toString()+" , probably problems with Business Logic or Database");
 				}
@@ -64,7 +65,6 @@ public class MainGUI extends JFrame {
 		});
 
 		initialize();
-		//this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	
@@ -78,7 +78,7 @@ public class MainGUI extends JFrame {
 		// this.setSize(271, 295);
 		this.setSize(495, 290);
 		this.setContentPane(getJContentPane());
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainTitle"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("MainTitle"));
 	}
 
 	/**
@@ -107,7 +107,7 @@ public class MainGUI extends JFrame {
 	private JButton getBoton2(){
 		if (jButtonCreateQuery == null) {
 			jButtonCreateQuery = new JButton();
-			jButtonCreateQuery.setText(ResourceBundle.getBundle("Etiquetas").getString("logIn")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-2$
+			jButtonCreateQuery.setText(ResourceBundle.getBundle(ETIQUETAS).getString("logIn")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-1$ //$NON-NLS-2$
 			jButtonCreateQuery.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					irekiLogin();
@@ -125,7 +125,7 @@ public class MainGUI extends JFrame {
 	private JButton getBoton3() {
 		if (jButtonQueryQueries == null) {
 			jButtonQueryQueries = new JButton();
-			jButtonQueryQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
+			jButtonQueryQueries.setText(ResourceBundle.getBundle(ETIQUETAS).getString("QueryQueries"));
 			jButtonQueryQueries.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					JFrame a = new FindQuestionsGUI();
@@ -140,7 +140,7 @@ public class MainGUI extends JFrame {
 
 	private JLabel getLblNewLabel() {
 		if (jLabelSelectOption == null) {
-			jLabelSelectOption = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SelectOption"));
+			jLabelSelectOption = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("SelectOption"));
 			jLabelSelectOption.setFont(new Font("Tahoma", Font.BOLD, 13));
 			jLabelSelectOption.setForeground(Color.BLACK);
 			jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
@@ -198,10 +198,10 @@ public class MainGUI extends JFrame {
 	}
 	
 	private void redibujar() {
-		jLabelSelectOption.setText(ResourceBundle.getBundle("Etiquetas").getString("SelectOption"));
-		jButtonQueryQueries.setText(ResourceBundle.getBundle("Etiquetas").getString("QueryQueries"));
-		jButtonCreateQuery.setText(ResourceBundle.getBundle("Etiquetas").getString("logIn"));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainTitle"));
+		jLabelSelectOption.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SelectOption"));
+		jButtonQueryQueries.setText(ResourceBundle.getBundle(ETIQUETAS).getString("QueryQueries"));
+		jButtonCreateQuery.setText(ResourceBundle.getBundle(ETIQUETAS).getString("logIn"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("MainTitle"));
 	}
 	
 	public void irekiLogin() {

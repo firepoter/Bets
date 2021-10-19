@@ -16,13 +16,12 @@ import domain.Bezeroa;
 import domain.Langilea;
 
 public class ArretaZerbitzuaEmanGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
 	LangileaGUI aurrekoa;
 	private Langilea langilea; 
-	//private ArrayList<BezeroartekoMezuaContainer> mezuak;
 	
 	private static final long serialVersionUID = 1L;
 	
-	//private BezeroartekoMezuaContainer selectedMezua;
 	private JScrollPane scrollPaneMezuak = new JScrollPane();
 	private JTable tableMezua = new JTable();
 	private DefaultTableModel tableModelMezuak;
@@ -34,8 +33,8 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 	private JButton send;
 	private JLabel invalid;
 	private String[] columnNamesMezuak = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("Date"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Who"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Date"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Who"), 
 	};
 	private JLabel jakinarazpenak;
 	private JComboBox<ArretaElkarrizketa> elkarrizketakConbo;
@@ -78,9 +77,9 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(630, 730));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("ProvideCustomer"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("ProvideCustomer"));
 		
-		back = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
+		back = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Back")); //$NON-NLS-1$ //$NON-NLS-2$
 		back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				back();
@@ -107,7 +106,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		labelEmaitza.setBounds(302, 291, 214, 14);
 		getContentPane().add(labelEmaitza);
 		
-		send = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
+		send = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Send")); //$NON-NLS-1$ //$NON-NLS-2$
 		send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jakinarazpenak.setText("");
@@ -117,12 +116,12 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 				String mezuarenTestua = textArea.getText();
 				if(mezuarenTestua.length()==0) {
 					jakinarazpenak2.setForeground(Color.RED);
-					jakinarazpenak2.setText(ResourceBundle.getBundle("Etiquetas").getString("MessageEmpty"));
+					jakinarazpenak2.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MessageEmpty"));
 				}else {
 					BLFacade facade=MainGUI.getBusinessLogic();
 					selectedElkarrizketa = facade.arretaMezuaBidali(selectedElkarrizketa, mezuarenTestua, false);
 					jakinarazpenak2.setForeground(Color.GREEN);
-					jakinarazpenak2.setText(ResourceBundle.getBundle("Etiquetas").getString("Sent"));
+					jakinarazpenak2.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Sent"));
 					textArea.setText(selectedMezua.getMezua());
 					textArea.setEditable(false);
 					send.setVisible(false);
@@ -139,7 +138,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		invalid.setBounds(434, 316, 46, 14);
 		getContentPane().add(invalid);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("GetCustomer")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("GetCustomer")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jakinarazpenak.setText("");
@@ -149,7 +148,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 				jakinarazpenak.setText("");
 				if(elkarrizketaBerria==null) {
 					jakinarazpenak.setForeground(Color.BLACK);
-					jakinarazpenak.setText(ResourceBundle.getBundle("Etiquetas").getString("NoAskingHelp"));
+					jakinarazpenak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoAskingHelp"));
 				}else {
 					send.setVisible(false);
 					send.setEnabled(false);
@@ -162,9 +161,9 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 					back.setBounds(10, 257, 89, 23);
 					choose.setVisible(true);
 					elkarrizketakConbo.setVisible(true);	
-					choose.setText(ResourceBundle.getBundle("Etiquetas").getString("ChooseCustomer"));
+					choose.setText(ResourceBundle.getBundle(ETIQUETAS).getString("ChooseCustomer"));
 					elkarrizketak.addElement(elkarrizketaBerria);
-					jakinarazpenak.setText(ResourceBundle.getBundle("Etiquetas").getString("CustomerAssigned"));
+					jakinarazpenak.setText(ResourceBundle.getBundle(ETIQUETAS).getString("CustomerAssigned"));
 				}
 			}
 		});
@@ -241,7 +240,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		gaia.setBounds(141, 118, 463, 38);
 		getContentPane().add(gaia);
 		
-		erantzun = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Reply")); //$NON-NLS-1$ //$NON-NLS-2$
+		erantzun = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Reply")); //$NON-NLS-1$ //$NON-NLS-2$
 		erantzun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jakinarazpenak.setText("");
@@ -261,7 +260,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		erantzun.setVisible(false);
 		getContentPane().add(erantzun);
 		
-		mezuraItzuli = new JButton(ResourceBundle.getBundle("Etiquetas").getString("BackToMessage")); //$NON-NLS-1$ //$NON-NLS-2$
+		mezuraItzuli = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("BackToMessage")); //$NON-NLS-1$ //$NON-NLS-2$
 		mezuraItzuli.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				erantzun.setVisible(true);
@@ -281,7 +280,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		jakinarazpenak2.setBounds(141, 602, 357, 14);
 		getContentPane().add(jakinarazpenak2);
 		
-		stop = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Stop")); //$NON-NLS-1$ //$NON-NLS-2$
+		stop = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Stop")); //$NON-NLS-1$ //$NON-NLS-2$
 		stop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				BLFacade facade=MainGUI.getBusinessLogic();
@@ -294,7 +293,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 		stop.setEnabled(false);
 		getContentPane().add(stop);
 		
-		bukatu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Finish")); //$NON-NLS-1$ //$NON-NLS-2$
+		bukatu = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Finish")); //$NON-NLS-1$ //$NON-NLS-2$
 		bukatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				BLFacade facade=MainGUI.getBusinessLogic();
@@ -382,11 +381,11 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 			back.setBounds(10, 15, 89, 23);
 			choose.setVisible(false);
 			elkarrizketakConbo.setVisible(false);	
-			choose.setText(ResourceBundle.getBundle("Etiquetas").getString("NoCustomerAssigned"));
+			choose.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoCustomerAssigned"));
 		}else {
 			choose.setVisible(true);
 			elkarrizketakConbo.setVisible(true);	
-			choose.setText(ResourceBundle.getBundle("Etiquetas").getString("ChooseCustomer"));
+			choose.setText(ResourceBundle.getBundle(ETIQUETAS).getString("ChooseCustomer"));
 		}
 		for(ArretaElkarrizketa ae : elkarrizketaZerrenda) {
 			elkarrizketak.addElement(ae);
@@ -400,7 +399,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 			tableModelMezuak.setDataVector(null, columnNamesMezuak);
 			tableMezua.getColumnModel().getColumn(0).setPreferredWidth(120);
 			tableMezua.getColumnModel().getColumn(1).setPreferredWidth(20);
-			gaia.setText(ResourceBundle.getBundle("Etiquetas").getString("Subject")+": "+selectedElkarrizketa.getGaia());
+			gaia.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Subject")+": "+selectedElkarrizketa.getGaia());
 			mezuak = selectedElkarrizketa.getMezuak();
 			Vector<Object> row;
 			boolean langileak = false;
@@ -408,7 +407,7 @@ public class ArretaZerbitzuaEmanGUI extends JFrame {
 				row = new Vector<Object>();
 				row.add(am);
 				if(langileak) {
-					row.add(ResourceBundle.getBundle("Etiquetas").getString("Worker"));
+					row.add(ResourceBundle.getBundle(ETIQUETAS).getString("Worker"));
 					langileak=false;
 				}else {
 					row.add(selectedElkarrizketa.getBezeroa());

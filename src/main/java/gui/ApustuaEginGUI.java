@@ -20,6 +20,7 @@ import domain.Pronostikoa;
 import domain.Question;
 
 public class ApustuaEginGUI extends JFrame {
+	private static final String ETIQUETAS = "Etiquetas";
 	BezeroaGUI aurrekoa;
 	Bezeroa bezeroa;
 	
@@ -61,11 +62,11 @@ public class ApustuaEginGUI extends JFrame {
 	private DefaultTableModel tableModelApustua;
 	
 	private String[] columnNamesApustua = new String[] {
-			ResourceBundle.getBundle("Etiquetas").getString("Date"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Event"), 
-			ResourceBundle.getBundle("Etiquetas").getString("Query"),
-			ResourceBundle.getBundle("Etiquetas").getString("Result"),
-			ResourceBundle.getBundle("Etiquetas").getString("Kuota")
+			ResourceBundle.getBundle(ETIQUETAS).getString("Date"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Event"), 
+			ResourceBundle.getBundle(ETIQUETAS).getString("Query"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("Result"),
+			ResourceBundle.getBundle(ETIQUETAS).getString("Kuota")
 	};
 	
 	private Integer pronosI;
@@ -92,7 +93,7 @@ public class ApustuaEginGUI extends JFrame {
 		
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 600));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MakeBet")); //$NON-NLS-1$ //$NON-NLS-2$
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("MakeBet")); //$NON-NLS-1$ //$NON-NLS-2$
 		jComboBoxEvents.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -115,12 +116,12 @@ public class ApustuaEginGUI extends JFrame {
 
 		jComboBoxEvents.setModel(modelEvents);
 		jComboBoxEvents.setBounds(new Rectangle(275, 47, 250, 20));
-		jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("ListEvents")); //$NON-NLS-1$ //$NON-NLS-2$
+		jLabelListOfEvents.setText(ResourceBundle.getBundle(ETIQUETAS).getString("ListEvents")); //$NON-NLS-1$ //$NON-NLS-2$
 		jLabelListOfEvents.setBounds(new Rectangle(290, 21, 277, 20));
 
 		jCalendar.setBounds(new Rectangle(40, 50, 225, 150));
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
-		jButtonClose.setText(ResourceBundle.getBundle("Etiquetas").getString("jButtonClose")); //$NON-NLS-1$ //$NON-NLS-2$
+		jButtonClose.setText(ResourceBundle.getBundle(ETIQUETAS).getString("jButtonClose")); //$NON-NLS-1$ //$NON-NLS-2$
 		jButtonClose.setBounds(new Rectangle(300, 522, 130, 30));
 		jButtonClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -147,7 +148,7 @@ public class ApustuaEginGUI extends JFrame {
 		jLabelEventDate.setBounds(40, 16, 140, 25);
 		getContentPane().add(jLabelEventDate);
 		
-		JLabel jLabelListOfQuestions = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("jLabelListOfQuestions")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel jLabelListOfQuestions = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("jLabelListOfQuestions")); //$NON-NLS-1$ //$NON-NLS-2$
 		jLabelListOfQuestions.setBounds(290, 109, 277, 14);
 		getContentPane().add(jLabelListOfQuestions);
 		
@@ -178,7 +179,7 @@ public class ApustuaEginGUI extends JFrame {
 		jComboBoxQuestions.setBounds(275, 134, 250, 22);
 		getContentPane().add(jComboBoxQuestions);
 		
-		jButtonCreate=new JButton(ResourceBundle.getBundle("Etiquetas").getString("jButtonCreate")); //$NON-NLS-1$ //$NON-NLS-2$
+		jButtonCreate=new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("jButtonCreate")); //$NON-NLS-1$ //$NON-NLS-2$
 		jButtonCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -190,17 +191,17 @@ public class ApustuaEginGUI extends JFrame {
 					double bet = Double.valueOf(textFieldBet.getText());
 					if(bet>bezeroa.getDirua()) {
 						jLabelMsg.setForeground(Color.RED);
-						jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("NoMoney"));
+						jLabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NoMoney"));
 					}else {
 						double minBet = getMinBet();
 						if(bet<minBet) {
 							jLabelMsg.setForeground(Color.RED);
-							jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("NotMinBet")+" "+minBet+"�");
+							jLabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NotMinBet")+" "+minBet+"�");
 						}else{
 							BLFacade facade = MainGUI.getBusinessLogic();
 							bezeroa=facade.apustuaEgin(pronostikoak,bet,bezeroa);
 							jLabelMsg.setForeground(Color.GREEN);
-							jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("SuccesBet"));
+							jLabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("SuccesBet"));
 							scrollPaneApustua.setVisible(false);
 							for(int i = 0; i<pronostikoak.size(); i++) {
 								tableModelApustua.removeRow(0);
@@ -214,7 +215,7 @@ public class ApustuaEginGUI extends JFrame {
 				}catch(Exception e) {
 					e.printStackTrace();
 					jLabelMsg.setForeground(Color.RED);
-					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("InvalidSyntax"));
+					jLabelMsg.setText(ResourceBundle.getBundle(ETIQUETAS).getString("InvalidSyntax"));
 				}
 			}
 		});
@@ -241,7 +242,7 @@ public class ApustuaEginGUI extends JFrame {
 				selectedPronostic = ((domain.Pronostikoa) jComboBoxPronostics.getSelectedItem());
 				if(selectedPronostic!=null) {
 					addButton.setEnabled(true);
-					jLabelMinBet.setText(ResourceBundle.getBundle("Etiquetas").getString("MinBet")+" "+selectedQuestion.getBetMinimum());
+					jLabelMinBet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MinBet")+" "+selectedQuestion.getBetMinimum());
 				}else {
 					addButton.setEnabled(false);
 					jLabelMinBet.setText("");
@@ -253,7 +254,7 @@ public class ApustuaEginGUI extends JFrame {
 		jComboBoxPronostics.setModel(pronosticModel);
 		getContentPane().add(jComboBoxPronostics);
 		
-		JLabel lblNewLabelResult = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("lblNewLabelResult")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblNewLabelResult = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("lblNewLabelResult")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabelResult.setBounds(290, 186, 140, 14);
 		getContentPane().add(lblNewLabelResult);
 		
@@ -262,7 +263,7 @@ public class ApustuaEginGUI extends JFrame {
 		textFieldBet.setBounds(77, 482, 60, 20);
 		getContentPane().add(textFieldBet);
 		
-		JLabel jLabelBet = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("jLabelBet")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel jLabelBet = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("jLabelBet")); //$NON-NLS-1$ //$NON-NLS-2$
 		jLabelBet.setBounds(10, 482, 68, 14);
 		getContentPane().add(jLabelBet);
 		jLabelMinBet.setBounds(275, 246, 292, 14);
@@ -297,7 +298,7 @@ public class ApustuaEginGUI extends JFrame {
 		});
 
 		
-		quitButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Quit")); //$NON-NLS-1$ //$NON-NLS-2$
+		quitButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("Quit")); //$NON-NLS-1$ //$NON-NLS-2$
 		quitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				pronosticAdded.setText("");
@@ -312,8 +313,8 @@ public class ApustuaEginGUI extends JFrame {
 				}else {
 					minBetTotala=getMinBet();
 					kuotaTotala=kuotaTotala/kuotaZaharra;
-					TotalMinBet.setText(ResourceBundle.getBundle("Etiquetas").getString("MinBet")+" "+minBetTotala);
-					TotalFee.setText(ResourceBundle.getBundle("Etiquetas").getString("TotalFee")+" "+kuotaTotala);
+					TotalMinBet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MinBet")+" "+minBetTotala);
+					TotalFee.setText(ResourceBundle.getBundle(ETIQUETAS).getString("TotalFee")+" "+kuotaTotala);
 				}
 				quitButton.setEnabled(false);
 			}
@@ -350,14 +351,14 @@ public class ApustuaEginGUI extends JFrame {
 							}
 							kuotaTotala=kuotaTotala*selectedPronostic.getKuota();
 						}
-						TotalMinBet.setText(ResourceBundle.getBundle("Etiquetas").getString("MinBet")+" "+minBetTotala);
-						TotalFee.setText(ResourceBundle.getBundle("Etiquetas").getString("TotalFee")+" "+kuotaTotala);
+						TotalMinBet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MinBet")+" "+minBetTotala);
+						TotalFee.setText(ResourceBundle.getBundle(ETIQUETAS).getString("TotalFee")+" "+kuotaTotala);
 						pronostikoak.add(selectedPronostic);
 					}else {
-						pronosticAdded.setText(ResourceBundle.getBundle("Etiquetas").getString("Finished"));
+						pronosticAdded.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Finished"));
 					}
 				}else {
-					pronosticAdded.setText(ResourceBundle.getBundle("Etiquetas").getString("PronosticAlreadyAdded"));
+					pronosticAdded.setText(ResourceBundle.getBundle(ETIQUETAS).getString("PronosticAlreadyAdded"));
 				}
 			}
 		});

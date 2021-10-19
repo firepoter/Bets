@@ -22,6 +22,7 @@ import domain.Langilea;
 
 public class LoginGUI extends JFrame {
 
+	private static final String ETIQUETAS = "Etiquetas";
 	/**
 	 * 
 	 */
@@ -44,7 +45,7 @@ public class LoginGUI extends JFrame {
 	}
 
 	private void loginGUIExekuzioa() throws Exception{
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("LoginGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("LoginGUI"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -52,7 +53,7 @@ public class LoginGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblUserName = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("lblUserName")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblUserName = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("lblUserName")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblUserName.setBounds(21, 29, 84, 14);
 		contentPane.add(lblUserName);
 		
@@ -65,11 +66,11 @@ public class LoginGUI extends JFrame {
 		password.setBounds(115, 57, 148, 20);
 		contentPane.add(password);
 		
-		JLabel lblPassword = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("lblPassword")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblPassword = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("lblPassword")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblPassword.setBounds(21, 60, 84, 14);
 		contentPane.add(lblPassword);
 		
-		JButton logIn = new JButton(ResourceBundle.getBundle("Etiquetas").getString("logIn")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton logIn = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("logIn")); //$NON-NLS-1$ //$NON-NLS-2$
 		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				erroreMezua.setText("");
@@ -84,14 +85,14 @@ public class LoginGUI extends JFrame {
 				}else if(pertsona instanceof Bezeroa) {
 					loginBezeroa((Bezeroa)pertsona);
 				}else {
-					erroreMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("IncorrectPass"));
+					erroreMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("IncorrectPass"));
 				}
 			}
 		});
 		logIn.setBounds(162, 113, 89, 39);
 		contentPane.add(logIn);
 		
-		JButton register = new JButton(ResourceBundle.getBundle("Etiquetas").getString("register")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton register = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("register")); //$NON-NLS-1$ //$NON-NLS-2$
 		register.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				irekiRegister();
@@ -100,11 +101,11 @@ public class LoginGUI extends JFrame {
 		register.setBounds(270, 211, 139, 39);
 		contentPane.add(register);
 		
-		NotAcount = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("NotAcount")); //$NON-NLS-1$ //$NON-NLS-2$
+		NotAcount = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("NotAcount")); //$NON-NLS-1$ //$NON-NLS-2$
 		NotAcount.setBounds(220, 193, 224, 14);
 		contentPane.add(NotAcount);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("btnNewButton")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("btnNewButton")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				bueltatuMain();

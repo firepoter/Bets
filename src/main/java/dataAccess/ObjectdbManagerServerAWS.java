@@ -17,16 +17,16 @@ public class ObjectdbManagerServerAWS {
 			System.out.println("\nERROR, the database is configured as local");
 		}
 		else {
+		accesDb(c);
+		
+		}
+	}
+
+	private static void accesDb(ConfigXML c) {
 		try{
 
 			System.out.println("Lauching objectdb server");
-		    try { // Se va a ejecutar en máquina Linux: usar "/"
-		    	String st="java -cp resources/objectdb.jar com.objectdb.Server -port "+ c.getDatabasePort()+" start";
-		    	System.out.println(st);
-		    	Runtime.getRuntime().exec(st);
-		    } catch (Exception ioe) {
-		    	System.out.println (ioe);
-		    }
+		    lMaq(c);
 			
 		    System.out.println("\nAccess granted to: "+c.getUser());
 		    
@@ -40,7 +40,15 @@ public class ObjectdbManagerServerAWS {
 			System.out.println("Something has happened in ObjectdbManagerServer: "+e.toString());
 
 		}
-		
+	}
+
+	private static void lMaq(ConfigXML c) {
+		try { // Se va a ejecutar en mï¿½quina Linux: usar "/"
+			String st="java -cp resources/objectdb.jar com.objectdb.Server -port "+ c.getDatabasePort()+" start";
+			System.out.println(st);
+			Runtime.getRuntime().exec(st);
+		} catch (Exception ioe) {
+			System.out.println (ioe);
 		}
 	}
 		

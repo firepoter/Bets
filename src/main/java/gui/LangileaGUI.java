@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 
 public class LangileaGUI extends JFrame {
 	
+	private static final String ETIQUETAS = "Etiquetas";
 	/**
 	 * 
 	 */
@@ -33,7 +34,7 @@ public class LangileaGUI extends JFrame {
 	}
 
 	public void langileaGUIExekuzioa() throws Exception{
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("Worker"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("Worker"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 463);
 		contentPane = new JPanel();
@@ -41,11 +42,11 @@ public class LangileaGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Welcome")+" "+langilea.getErabiltzaileIzena()+"!"); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Welcome")+" "+langilea.getErabiltzaileIzena()+"!"); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel.setBounds(124, 23, 250, 29);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("SignOut"));
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("SignOut"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				saioaItxi();
@@ -60,7 +61,7 @@ public class LangileaGUI extends JFrame {
 				irekiCreateEvent();
 			}
 		});
-		btnCreateEvent.setText(ResourceBundle.getBundle("Etiquetas").getString("CreateEvent"));
+		btnCreateEvent.setText(ResourceBundle.getBundle(ETIQUETAS).getString("CreateEvent"));
 		btnCreateEvent.setBounds(16, 49, 408, 66);
 		contentPane.add(btnCreateEvent);
 		
@@ -70,7 +71,7 @@ public class LangileaGUI extends JFrame {
 				irekiCreatePronostic();
 			}
 		});
-		btnCreatePronostic.setText(ResourceBundle.getBundle("Etiquetas").getString("CreatePronostic"));
+		btnCreatePronostic.setText(ResourceBundle.getBundle(ETIQUETAS).getString("CreatePronostic"));
 		btnCreatePronostic.setBounds(16, 115, 408, 66);
 		contentPane.add(btnCreatePronostic);
 		
@@ -80,7 +81,7 @@ public class LangileaGUI extends JFrame {
 				irekiEmaitzaIpini();
 			}
 		});
-		btnPutResult.setText(ResourceBundle.getBundle("Etiquetas").getString("PutResult"));
+		btnPutResult.setText(ResourceBundle.getBundle(ETIQUETAS).getString("PutResult"));
 		btnPutResult.setBounds(16, 182, 408, 66);
 		contentPane.add(btnPutResult);
 		
@@ -90,7 +91,7 @@ public class LangileaGUI extends JFrame {
 				irekiGertaeraEzabatu();
 			}
 		});
-		btnDeleteEvent.setText(ResourceBundle.getBundle("Etiquetas").getString("DeleteEvent"));
+		btnDeleteEvent.setText(ResourceBundle.getBundle(ETIQUETAS).getString("DeleteEvent"));
 		btnDeleteEvent.setBounds(16, 249, 408, 66);
 		contentPane.add(btnDeleteEvent);
 		
@@ -100,7 +101,7 @@ public class LangileaGUI extends JFrame {
 				irekiArretaZerbitzuaEman();
 			}
 		});
-		btnDeleteEvent_1.setText(ResourceBundle.getBundle("Etiquetas").getString("ProvideCustomer")); //$NON-NLS-1$ //$NON-NLS-2$
+		btnDeleteEvent_1.setText(ResourceBundle.getBundle(ETIQUETAS).getString("ProvideCustomer")); //$NON-NLS-1$ //$NON-NLS-2$
 		btnDeleteEvent_1.setBounds(16, 315, 408, 66);
 		contentPane.add(btnDeleteEvent_1);
 	}

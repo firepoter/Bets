@@ -27,6 +27,9 @@ import javax.swing.JComboBox;
 
 public class RegisterGUI extends JFrame {
 
+	private static final String REQUIRED = "Required";
+	private static final String INVALID = "Invalid";
+	private static final String ETIQUETAS = "Etiquetas";
 	/**
 	 * 
 	 */
@@ -84,7 +87,7 @@ public class RegisterGUI extends JFrame {
 
 
 	public void registerGUIExekuzioa() {
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("RegisterGUI"));
+		this.setTitle(ResourceBundle.getBundle(ETIQUETAS).getString("RegisterGUI"));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(500, 100, 470, 600);
 		contentPane = new JPanel();
@@ -133,7 +136,7 @@ public class RegisterGUI extends JFrame {
 		telefonoaMezua.setForeground(Color.RED);
 		contentPane.add(telefonoaMezua);
 		
-		lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Name")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblNewLabel = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Name")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel.setBounds(63, 37, 78, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -142,7 +145,7 @@ public class RegisterGUI extends JFrame {
 		contentPane.add(name);
 		name.setColumns(10);
 		
-		lblFirstSurname = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Abizena1")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblFirstSurname = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Abizena1")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblFirstSurname.setBounds(63, 66, 111, 14);
 		contentPane.add(lblFirstSurname);
 		
@@ -151,7 +154,7 @@ public class RegisterGUI extends JFrame {
 		contentPane.add(abizena_1);
 		abizena_1.setColumns(10);
 		
-		lblSecondSurname = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Abizena2")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblSecondSurname = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Abizena2")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblSecondSurname.setBounds(63, 99, 111, 14);
 		contentPane.add(lblSecondSurname);
 		
@@ -160,7 +163,7 @@ public class RegisterGUI extends JFrame {
 		contentPane.add(abizena_2);
 		abizena_2.setColumns(10);
 		
-		lblPassword = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Password")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblPassword = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Password")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblPassword.setBounds(63, 161, 78, 14);
 		contentPane.add(lblPassword);
 		
@@ -169,7 +172,7 @@ public class RegisterGUI extends JFrame {
 		pas_1.setBounds(176, 158, 111, 20);
 		contentPane.add(pas_1);
 		
-		lblRepitePassword = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Password2")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblRepitePassword = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Password2")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblRepitePassword.setBounds(63, 192, 111, 14);
 		contentPane.add(lblRepitePassword);
 		
@@ -179,7 +182,7 @@ public class RegisterGUI extends JFrame {
 		
 		
 		
-		lblNewLabel_1 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("UserName"));
+		lblNewLabel_1 = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("UserName"));
 		lblNewLabel_1.setBounds(63, 128, 78, 14);
 		contentPane.add(lblNewLabel_1);
 		
@@ -197,11 +200,11 @@ public class RegisterGUI extends JFrame {
 		contentPane.add(e_mail);
 		e_mail.setColumns(10);
 		
-		lblNewLabel_2 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("BirthDate")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblNewLabel_2 = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("BirthDate")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel_2.setBounds(198, 328, 155, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		lblDay = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Day")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblDay = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Day")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblDay.setBounds(63, 356, 46, 14);
 		contentPane.add(lblDay);
 		
@@ -214,26 +217,26 @@ public class RegisterGUI extends JFrame {
 		comboBox.setBounds(198, 353, 89, 20);
 		comboBox.setModel(hilabeteak);
 		contentPane.add(comboBox);
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("January"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("February"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("March"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("April"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("May"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("June"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("July"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("August"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("Sectenber"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("October"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("Novenber"));
-		hilabeteak.addElement(ResourceBundle.getBundle("Etiquetas").getString("Decenber"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("January"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("February"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("March"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("April"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("May"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("June"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("July"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("August"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("Sectenber"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("October"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("Novenber"));
+		hilabeteak.addElement(ResourceBundle.getBundle(ETIQUETAS).getString("Decenber"));
 		
 		
 		
-		lblNewLabel_3 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Month")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblNewLabel_3 = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Month")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel_3.setBounds(146, 356, 64, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		lblYear = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Year")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblYear = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("Year")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblYear.setBounds(308, 356, 64, 14);
 		contentPane.add(lblYear);
 		
@@ -242,7 +245,7 @@ public class RegisterGUI extends JFrame {
 		contentPane.add(year);
 		year.setColumns(10);
 		
-		lblNewLabel_4 = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("PhoneNumber")); //$NON-NLS-1$ //$NON-NLS-2$
+		lblNewLabel_4 = new JLabel(ResourceBundle.getBundle(ETIQUETAS).getString("PhoneNumber")); //$NON-NLS-1$ //$NON-NLS-2$
 		lblNewLabel_4.setBounds(63, 254, 111, 14);
 		contentPane.add(lblNewLabel_4);
 		
@@ -261,7 +264,7 @@ public class RegisterGUI extends JFrame {
 		contentPane.add(phoneNumber);
 		phoneNumber.setColumns(10);
 		
-		JButton btnRegister = new JButton(ResourceBundle.getBundle("Etiquetas").getString("register"));
+		JButton btnRegister = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("register"));
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				pas_1Mezua.setText("");
@@ -288,7 +291,7 @@ public class RegisterGUI extends JFrame {
 						Pertsona pertsona = facade.register(izena, abizena1, abizena2, erabiltzaileIzena, pasahitza, telefonoa, emaila, UtilDate.newDate(Integer.valueOf(year.getText()),hilabeteak.getIndexOf(hilabeteak.getSelectedItem()),Integer.valueOf(day.getText())), "bezeroa");
 						loginBezeroa((Bezeroa)pertsona);
 					}catch (UserAlreadyExist e) {
-						usernameMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("AlredyUsed"));
+						usernameMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("AlredyUsed"));
 					}
 					
 				}
@@ -297,7 +300,7 @@ public class RegisterGUI extends JFrame {
 		btnRegister.setBounds(172, 391, 115, 35);
 		contentPane.add(btnRegister);		
 		
-		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("jButtonClose"));
+		JButton btnNewButton = new JButton(ResourceBundle.getBundle(ETIQUETAS).getString("jButtonClose"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				bueltatuLogin();
@@ -316,59 +319,59 @@ public class RegisterGUI extends JFrame {
 		Pattern pattern=Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 		Matcher mather=pattern.matcher(e_mail.getText());
 		if(mather.find()!=true) {
-			emailMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+			emailMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(INVALID));
 			pasa=false;
 		}
 		if(name.getText().isEmpty()) {
-			nameMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			nameMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		}
 		if((new String(pas_1.getPassword())).length()<8) {
-			pas_1Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("NotLong"));
+			pas_1Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NotLong"));
 			pasa=false;
 		}
 		if((new String(pas_1.getPassword())).isEmpty()) {
-			pas_1Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			pas_1Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		}
 		if((new String(pas_2.getPassword())).isEmpty()) {
-			pas_2Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			pas_2Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		}
 		if((new String(pas_1.getPassword())).compareTo((new String(pas_2.getPassword())))!=0) {
-			pas_2Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("DiferentPas"));
+			pas_2Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("DiferentPas"));
 			pasa=false;
 		}
 		if(abizena_1.getText().isEmpty()) {
-			abizena_Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			abizena_Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		}
 		if(abizena_2.getText().isEmpty()) {
-			abizena_2Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			abizena_2Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		}
 		if(userName.getText().isEmpty()) {
-			usernameMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			usernameMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		}else if(userName.getText().length()<4) {
-			usernameMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("NotLong4"));
+			usernameMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NotLong4"));
 			pasa=false;
 		}
 		if(e_mail.getText().isEmpty()) {
-			emailMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			emailMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		}
 		if(phoneNumber.getText().isEmpty()) {
-			telefonoaMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Required"));
+			telefonoaMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(REQUIRED));
 			pasa=false;
 		} else if(phoneNumber.getText().length()!=9) {
-			telefonoaMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+			telefonoaMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(INVALID));
 			pasa=false;
 		} else {
 			try {
 				Integer.parseInt(phoneNumber.getText());
 			}catch (Exception e) {
-				telefonoaMezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Invalid"));
+				telefonoaMezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString(INVALID));
 				pasa=false;
 			}
 		}
@@ -377,13 +380,13 @@ public class RegisterGUI extends JFrame {
 			Date jaiotzeData =UtilDate.newDate(Integer.valueOf(year.getText()),hilabeteak.getIndexOf(hilabeteak.getSelectedItem()),Integer.valueOf(day.getText()));
 			int egunak=(int) ((gaur.getTime()-jaiotzeData.getTime())/(1000 * 60 * 60 * 24));
 			if(egunak<6575) {
-				date_Mezua2.setText(ResourceBundle.getBundle("Etiquetas").getString("NotAlowed1"));
-				date_Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("NotAlowed2"));
+				date_Mezua2.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NotAlowed1"));
+				date_Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("NotAlowed2"));
 				pasa=false;
 			}				
 		}catch(Exception e){
 			pasa=false;
-			date_Mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("DateNotAlowed"));
+			date_Mezua.setText(ResourceBundle.getBundle(ETIQUETAS).getString("DateNotAlowed"));
 		}
 		return pasa;
 	}

@@ -178,12 +178,6 @@ public class DataAccessYe2 {
 			pronos10 = ques4.addPronostic("Bai", (double)1.3);
 			pronos11 = ques4.addPronostic("Ez", (double)2.5);//
 		
-			pronos12 = q1.addPronostic("1", (double)1.2);
-			pronos13 = q1.addPronostic("X", (double)1.5);//
-			pronos14 = q1.addPronostic("2", (double)1.8);
-			pronos15 = q2.addPronostic("1", (double)1.2);//
-			pronos16 = q2.addPronostic("2", (double)1.6);
-			pronos17 = q2.addPronostic("Golik ez", (double)1.8);
 			pronos12 = q3.addPronostic("1", (double)1.2);
 			pronos13 = q3.addPronostic("X", (double)1.5);//
 			pronos14 = q3.addPronostic("2", (double)1.8);
@@ -209,7 +203,10 @@ public class DataAccessYe2 {
 			db.persist(apustua1);
 			db.persist(apustu2);
 			
-			Mugimendua m1,m2,m3,m4;
+			Mugimendua m1;
+			Mugimendua m2;
+			Mugimendua m3;
+			Mugimendua m4;
 			m1 = b2.addMugimendua("Bankuko diru-sarrera", 52, "bankua", UtilDate.newDate(2021, 2, 15));
 			m2 = b2.addMugimendua("Apustua egin", -2, "jokatu", UtilDate.newDate(2021, 2, 16));
 			m3 = b2.addMugimendua("Bankuko diru-sarrera", 30, "bankua", UtilDate.newDate(2021, 2, 15));
