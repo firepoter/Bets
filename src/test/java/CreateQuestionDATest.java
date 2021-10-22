@@ -117,12 +117,9 @@ class CreateQuestionDATest {
 			String queryText = "Query Text";
 			try {
 				// invoke System Under Test (sut)
-				Question q= sut.createQuestion(null, queryText, betMinimum);
+				assertThrows(NullPointerException.class, () -> sut.createQuestion(null, queryText, betMinimum));
 
-				// verify the results returned
-				assertNull(q);
-
-			} catch (QuestionAlreadyExist e) {
+			} catch (NullPointerException e) {
 				// if the program goes to this point fail
 				fail("The event is null. Impossible to search for a question in it");
 			} 
@@ -147,18 +144,9 @@ class CreateQuestionDATest {
 			String queryText = null;
 			try {
 				// invoke System Under Test (sut)
-				Question q= sut.createQuestion(ev, queryText, betMinimum);
+				assertThrows(NullPointerException.class, () -> sut.createQuestion(ev, queryText, betMinimum));
 
-				// verify the results returned
-				assertNull(q);
-				
-				// verify DB
-				Vector<Event> es = testDA.getEvents(oneDate);
-				testDA.close();
-
-				assertTrue(es.contains(ev));
-
-			} catch (QuestionAlreadyExist e) {
+			} catch (NullPointerException e) {
 				// if the program goes to this point fail
 				fail("No, the question is null");
 			} finally {
